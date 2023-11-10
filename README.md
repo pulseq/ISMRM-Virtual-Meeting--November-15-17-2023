@@ -43,5 +43,5 @@ The preliminary program of the Online Meeting:
 |15:25     |20      |Multiparametric mapping with Pulseq                     |Shohei Fujita                      |Qingping Chen        |
 |15:45     |20      |Pulseq for anything under the sun: from dynamic to metal|Bilal Tasdelen                     |Qingping Chen        |
 |16:05     |15      |A Pulseq Interpreter on Philips                         |Imam Shaik                         |Qingping Chen        |
-|16:20     |        |Another Philips Pulseq Interpreter: from basics to pTX  |Thomas Roos                        |Qingping Chen        |
-|16:35     |        |Q/A session & closing remarks                           |Maxim Zaitsev & Jon-Fredrik Nielsen|Qingping Chen        |
+|16:20     |15      |Another Philips Pulseq Interpreter: from basics to pTX  |Thomas Roos                        |Qingping Chen        |
+|16:35     |25      |Q/A session & closing remarks                           |Maxim Zaitsev & Jon-Fredrik Nielsen|Qingping Chen        |

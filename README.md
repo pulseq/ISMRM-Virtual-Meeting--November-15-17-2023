@@ -13,27 +13,35 @@ Handouts and tutorials will be stoted in this repository. We also invite all par
 
 The preliminary program of the Online Meeting: 
 
-|time (UTC)|duration|topic                                          |speaker                            |moderator            |
-|----------|--------|-----------------------------------------------|-----------------------------------|---------------------|
-|**Day 1** |        |                                               |                                   |                     |
-|14:00     |5       |Welcome                                        |Maxim Zaitsev & Jon-Fredrik Nielsen|Moritz Zaiss         |
-|14:05     |30      |Basic Pulseq concepts                          |Maxim Zaitsev                      |Moritz Zaiss         |
-|14:35     |30      |Working with Pulseq objects                    |Jon-Fredrik Nielsen                |Moritz Zaiss         |
-|15:05     |30      |Tutorials of some basic sequences with examples|Qingping Chen                      |Moritz Zaiss         |
-|15:35     |5       |*Break*                                        |                                   |                     |
-|15:40     |30      |Sequence analysis tools                        |Jon-Fredrik Nielsen                |Carlos Castillo Passi|
-|16:10     |30      |Pulseq in Python                               |Keerthi Sravan Ravi                |Carlos Castillo Passi|
-|16:40     |20      |Interactive Q/A session                        |Jon-Fredrik Nielsen                |Carlos Castillo Passi|
-|**Day 2** |        |                                               |                                   |                     |
-|14:00     |5       |Welcome                                        |Maxim Zaitsev & Jon-Fredrik Nielsen|Shohei Fujita        |
-|14:05     |30      |Pulseq on Siemens                              |Maxim Zaitsev                      |Shohei Fujita        |
-|14:35     |30      |Pulseq on GE                                   |Jon-Fredrik Nielsen                |Shohei Fujita        |
-|15:05     |30      |Image reconstruction (focus on Gadgetron)      |Qingping Chen                      |Shohei Fujita        |
-|15:35     |5       |*Break*                                        |                                   |                     |
-|15:40     |15      |What's new in Pulseq                           |Maxim Zaitsev                      |Bilal Tasdelen       |
-|15:55     |10      |Further new functions in Pulseq                |Jon-Fredrik Nielsen                |Bilal Tasdelen       |
-|16:05     |30      |Advanced sequence examples                     |Jon-Fredrik Nielsen                |Bilal Tasdelen       |
-|16:3525   |        |Interactive Q/A session                        |Maxim Zaitsev                      |Bilal Tasdelen       |
-|**Day 3** |        |                                               |                                   |                     |
-|          |        |                                               |                                   |                     |
-|          |        |                                               |                                   |                     |
+|time (UTC)|duration|topic                                                   |speaker                            |moderator            |
+|----------|--------|--------------------------------------------------------|-----------------------------------|---------------------|
+|**Day 1** |        |                                                        |                                   |                     |
+|14:00     |5       |Welcome                                                 |Maxim Zaitsev & Jon-Fredrik Nielsen|Moritz Zaiss         |
+|14:05     |30      |Basic Pulseq concepts                                   |Maxim Zaitsev                      |Moritz Zaiss         |
+|14:35     |30      |Working with Pulseq objects                             |Jon-Fredrik Nielsen                |Moritz Zaiss         |
+|15:05     |30      |Tutorials of some basic sequences with examples         |Qingping Chen                      |Moritz Zaiss         |
+|15:35     |5       |*Break*                                                 |                                   |                     |
+|15:40     |30      |Sequence analysis tools                                 |Jon-Fredrik Nielsen                |Carlos Castillo Passi|
+|16:10     |30      |Pulseq in Python                                        |Keerthi Sravan Ravi                |Carlos Castillo Passi|
+|16:40     |20      |Interactive Q/A session                                 |Jon-Fredrik Nielsen                |Carlos Castillo Passi|
+|**Day 2** |        |                                                        |                                   |                     |
+|14:00     |5       |Welcome                                                 |Maxim Zaitsev & Jon-Fredrik Nielsen|Shohei Fujita        |
+|14:05     |30      |Pulseq on Siemens                                       |Maxim Zaitsev                      |Shohei Fujita        |
+|14:35     |30      |Pulseq on GE                                            |Jon-Fredrik Nielsen                |Shohei Fujita        |
+|15:05     |30      |Image reconstruction (focus on Gadgetron)               |Qingping Chen                      |Shohei Fujita        |
+|15:35     |5       |*Break*                                                 |                                   |                     |
+|15:40     |15      |What's new in Pulseq                                    |Maxim Zaitsev                      |Bilal Tasdelen       |
+|15:55     |10      |Further new functions in Pulseq                         |Jon-Fredrik Nielsen                |Bilal Tasdelen       |
+|16:05     |30      |Advanced sequence examples                              |Jon-Fredrik Nielsen                |Bilal Tasdelen       |
+|16:35     |25      |Interactive Q/A session                                 |Maxim Zaitsev                      |Bilal Tasdelen       |
+|**Day 3** |        |                                                        |                                   |                     |
+|14:00     |20      |Pulseq simulator in Python                              |Moritz Zaiss                       |Maxim Zaitsev        |
+|14:20     |20      |Using KomaMRI.jl for Comprehensive Quantitative MRI     |Carlos Castillo Passi              |Maxim Zaitsev        |
+|14:40     |20      |Fat-water imaging with Pulseq                           |Jiayi Tang                         |Maxim Zaitsev        |
+|15:00     |20      |Spiral TSE                                              |Juergen Hennig                     |Maxim Zaitsev        |
+|15:20     |5       |*Break*                                                 |                                   |                     |
+|15:25     |20      |Multiparametric mapping with Pulseq                     |Shohei Fujita                      |Qingping Chen        |
+|15:45     |20      |Pulseq for anything under the sun: from dynamic to metal|Bilal Tasdelen                     |Qingping Chen        |
+|16:05     |15      |A Pulseq Interpreter on Philips                         |Imam Shaik                         |Qingping Chen        |
+|16:20     |        |Another Philips Pulseq Interpreter: from basics to pTX  |Thomas Roos                        |Qingping Chen        |
+|16:35     |        |Q/A session & closing remarks                           |Maxim Zaitsev & Jon-Fredrik Nielsen|Qingping Chen        |

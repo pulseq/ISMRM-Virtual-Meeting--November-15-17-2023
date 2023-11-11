@@ -1,15 +1,16 @@
-# ISMRM-Virtual-Meeting--November-15-17-2023
-Vendor-Agnostic Pulse Sequence Programming with Pulseq: From Basics to Advanced Topics (A Three-Day ISMRM Virtual Meeting Series)
+# Vendor-Agnostic Pulse Sequence Programming with Pulseq: From Basics to Advanced Topics 
 
-**Pulseq** is a vendor-independent MR pulse programming platform that allows one to create and analyze MRI sequences in interactive programming environments such as MATLAB or Python and to execute them on hardware using sequence-agnostic interpreters. Mature interpreters for the Pulseq specification now exist for Siemens and GE scanners, with possibly more to follow in the future.
+**A Three-Day ISMRM Virtual Meeting Series November 15-17, 2023**
+
+[Pulseq](https://pulseq.github.io/) is a vendor-independent MR pulse programming platform that allows one to create and analyze MRI sequences in interactive programming environments such as MATLAB or Python and to execute them on hardware using sequence-agnostic interpreters. Mature interpreters for the Pulseq specification now exist for Siemens and GE scanners, with possibly more to follow in the future.
 
 This course will take place over three half-days and will cover the following topical areas:
   * basic Pulseq concepts for beginners;
   * advanced sequence implementation and analysis tools;
   * vendor-specific implementation details and workflows;
-  * examples of **Pulseq** applications and third-party tools from the user community.
+  * examples of Pulseq applications and third-party tools from the user community.
 
-Handouts and tutorials will be stoted in this repository. We also invite all participants to use the  [Discussions](https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions) tab in this repository to ask questions and place comments. We will do our best to address all of the raised points in the interactive Q&A sessions at the end of each day.
+Handouts and tutorials will be stored in this repository. We also invite all participants to use the  [Discussions](https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions) tab in this repository to ask questions and place comments. We will do our best to address all of the raised points in the interactive Q&A sessions at the end of each day.
 
 The preliminary program of the Online Meeting: 
 

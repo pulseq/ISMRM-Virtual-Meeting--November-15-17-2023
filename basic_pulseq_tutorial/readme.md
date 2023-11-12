@@ -1,16 +1,25 @@
-Basic Pulseq tutorial for ISMRM virtual meeting in 15-17 Nov. 2023
-sequence folder:
-Basic MR spectroscopy
-s01_FID: the most simplest free induction decay sequence
-s02_SE: spin-echo sequence without gradients
-s03_SE_crushers: spin-echo sequence with a pair of crushers to eliminate spurious signals arising from imperfect 180-pulse
-Basic MR imaging
-s11_GRE2D: basic 2D gradient echo (GRE) sequence
-s12_GRE2D_optimizedSpoiler: 2D GRE with optimized spoiler timing
-s13_GRE2D_acceleratedComputation: 2D GRE with optimized spoiler timing and accelerated computation
+# Basic Pulseq tutorial
+## 1. Prerequisites
+### 1.1 Programming Tools
+Matlab software (https://mathworks.com/products/matlab.html) needs to be installed in your computer.   
+Basic familiarity with Matlab programming is required.   
+### 1.2 Pulseq Software
+Please download the Pulseq software from https://github.com/pulseq/pulseq. Install Pulseq software in Matlab by adding its directory and subdirectories to Matlab's path.   
+### 1.3 mapVBVD Software
+The mapVBVD software is required to read raw data in Siemens TWIX format. The software can be downloaded from https://github.com/pehses/mapVBVD and installed by adding its directory to Matlab's path.
 
-data folder:
-work in progress
+## 2. sequence folder
+### 2.1 Basic MR spectroscopy
+s01_FID: the most simplest free induction decay sequence   
+s02_SE: spin-echo sequence without gradients   
+s03_SE_crushers: spin-echo sequence with a pair of crushers to eliminate spurious signals arising from imperfect 180-pulse   
+### 2.2 Basic MR imaging
+s11_GRE2D: basic 2D gradient echo (GRE) sequence   
+s12_GRE2D_optimizedSpoiler: 2D GRE with optimized spoiler timing   
+s13_GRE2D_acceleratedComputation: 2D GRE with optimized spoiler timing and accelerated computation   
 
-recon folder:
-work in progress
+## 3. data folder
+work in progress   
+
+## 4. recon folder
+work in progress   

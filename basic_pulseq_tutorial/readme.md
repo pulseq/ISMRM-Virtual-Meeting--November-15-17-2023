@@ -23,3 +23,6 @@ work in progress
 
 ## 4. recon folder
 work in progress   
+
+## A more Detailed Pulseq tutorial
+https://github.com/pulseq/tutorials    

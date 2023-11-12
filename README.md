@@ -28,12 +28,12 @@ The preliminary program of the Online Meeting:
 |16:40     |20      |Interactive Q/A session                                 |Jon-Fredrik Nielsen                |Carlos Castillo Passi|
 |**Day 2** |        |                                                        |                                   |                     |
 |14:00     |5       |Welcome                                                 |Maxim Zaitsev & Jon-Fredrik Nielsen|Shohei Fujita        |
-|14:05     |30      |Pulseq on Siemens                                       |Maxim Zaitsev                      |Shohei Fujita        |
-|14:35     |30      |Pulseq on GE                                            |Jon-Fredrik Nielsen                |Shohei Fujita        |
-|15:05     |30      |Image reconstruction (focus on Gadgetron)               |Qingping Chen                      |Shohei Fujita        |
-|15:35     |5       |*Break*                                                 |                                   |                     |
-|15:40     |15      |What's new in Pulseq                                    |Maxim Zaitsev                      |Bilal Tasdelen       |
-|15:55     |10      |Further new functions in Pulseq                         |Jon-Fredrik Nielsen                |Bilal Tasdelen       |
+|14:05     |15      |What's new in Pulseq                                    |Maxim Zaitsev                      |Shohei Fujita        |
+|14:20     |10      |Further new functions in Pulseq                         |Jon-Fredrik Nielsen                |Shohei Fujita        |
+|14:30     |30      |Pulseq on Siemens                                       |Maxim Zaitsev                      |Shohei Fujita        |
+|15:00     |30      |Pulseq on GE                                            |Jon-Fredrik Nielsen                |Shohei Fujita        |
+|15:30     |5       |*Break*                                                 |                                   |                     |
+|15:35     |15      |Image reconstruction (focus on Gadgetron)               |Qingping Chen                      |Bilal Tasdelen       |
 |16:05     |30      |Advanced sequence examples                              |Jon-Fredrik Nielsen                |Bilal Tasdelen       |
 |16:35     |25      |Interactive Q/A session                                 |Maxim Zaitsev                      |Bilal Tasdelen       |
 |**Day 3** |        |                                                        |                                   |                     |

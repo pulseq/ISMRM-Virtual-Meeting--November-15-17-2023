@@ -25,10 +25,13 @@ step. *Meld* software can be used for text comparison and can be downloaded from
 * s13_GRE2D_acceleratedComputation: 2D GRE with optimized spoiler timing and accelerated computation.   
 
 ## 3. Data Folder
-works-in-progress.   
+It contains the link to six k-space raw data acquired from the above sequences.      
 
 ## 4. Recon Folder
-works-in-progress.   
+It contains six *.seq* files produced by the above sequences and the corresponding reconstruction scripts.  
 
-## 5. A More Detailed Pulseq Tutorial
+## 5. Results Folder
+It contains k-space raw data and reconstructed spectra/images from the six sequences.
+
+## 6. A More Detailed Pulseq Tutorial
 This Pulseq tutorial only covers very basic sequence design concepts. For more detailed tutorials, please go to https://github.com/pulseq/tutorials.    

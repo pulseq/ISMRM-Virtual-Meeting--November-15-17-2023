@@ -1,5 +1,5 @@
-%% Pulseq tutorial for ISMRM virtual meeting 15.11.2023. Qingping Chen
-% Build a spin echo sequence
+%% Pulseq tutorial for ISMRM virtual meeting 15.11.2023
+% Build a spin echo sequence without gradients
 clear ; close all; clc ;
 %% Define system properties
 system = mr.opts('rfRingdownTime', 20e-6, 'rfDeadTime', 100e-6, ...
@@ -19,11 +19,12 @@ TE = 200e-3 ; % unit: s
 %% Create a non-selective and refocusing pulse 
 rf_ex = mr.makeBlockPulse(pi/2, 'Duration', rfDur, 'system', system) ;
 rf_ref = mr.makeBlockPulse(pi,'Duration',rfDur, 'system', system, 'use', 'refocusing') ;
+
 %% Define delays and ADC events
 delayTE1 = TE/2 - rf_ex.shape_dur/2 - rf_ex.ringdownTime - rf_ref.delay...
     - rf_ref.shape_dur/2 ;
 delayTE2 = TE/2 - rf_ref.shape_dur/2 - rf_ref.ringdownTime - adcDur / 2 ;
-adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', delayTE2);
+adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', delayTE2) ;
 delayTR = TR - mr.calcDuration(rf_ex) - delayTE1 - mr.calcDuration(rf_ref) - mr.calcDuration(adc) ;
 assert(delayTE1 >= 0) ;
 assert(delayTE2 >= 0) ;
@@ -55,6 +56,9 @@ seq.write('se.seq')       % Write to pulseq file
 seq.plot() ;
 
 %% plot k-spaces
+% k-space trajectory calculation
+[ktraj_adc, t_adc, ktraj, t_ktraj, t_excitation, t_refocusing] = seq.calculateKspacePP();
 figure; plot(ktraj(1,:),ktraj(2,:),'b'); % a 2D plot
 axis('equal'); % enforce aspect ratio for the correct trajectory display
 hold;plot(ktraj_adc(1,:),ktraj_adc(2,:),'r.'); % plot the sampling points
+

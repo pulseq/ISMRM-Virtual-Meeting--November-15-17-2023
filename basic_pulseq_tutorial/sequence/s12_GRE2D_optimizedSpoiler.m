@@ -1,6 +1,6 @@
 %% ISMRM virtual meeting 15.11.2023
 % Build a 2D GRE sequence with optimized spoiler
-tic ;
+
 %% set system limits and parameters
 sys = mr.opts('MaxGrad', 22, 'GradUnit', 'mT/m', ...
     'MaxSlew', 120, 'SlewUnit', 'T/m/s', ...
@@ -59,6 +59,7 @@ assert(delayTR >= 0) ;
 tic ;
 
 %% Loop over phase encodes and define sequence blocks
+tic ;
 for i=1:Ny
     % RF spoiling (vary RF phase pseudo-randomly)
     rand_phase = mod(117*(i^2 + i + 2), 360) * pi/180 ;

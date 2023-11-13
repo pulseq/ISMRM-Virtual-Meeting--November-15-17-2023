@@ -1,3 +1,4 @@
+There are six raw data acquired from the sequences:
 meas_MID00030_FID02985_pulseq_s01_fid.dat
 meas_MID00031_FID02986_pulseq_s02_se.dat
 meas_MID00032_FID02987_pulseq_s03_se_crusher.dat

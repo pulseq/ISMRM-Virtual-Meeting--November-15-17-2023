@@ -1,10 +1,11 @@
 %% ISMRM virtual meeting 15.11.2023
 % Build a basic 2D GRE sequence
+clear all; close all; clc ;
 
 %% set system limits and parameters
 sys = mr.opts('MaxGrad', 22, 'GradUnit', 'mT/m', ...
     'MaxSlew', 120, 'SlewUnit', 'T/m/s', ...
-    'rfRingdownTime', 20e-6, 'rfDeadTime', 100e-6, 'adcDeadTime', 10e-6) ;
+    'rfRingdownTime', 20e-6, 'rfDeadTime', 100e-6, 'adcDeadTime', 20e-6) ;
 
 seq = mr.Sequence(sys) ;           % Create a new sequence object
 fov = 256e-3 ; Nx = 256 ; Ny = 256 ;     % Define FOV and resolution
@@ -46,6 +47,7 @@ assert(delayTE >= 0 ) ;
 assert(delayTR >= mr.calcDuration(gxSpoil, gyReph, gzSpoil) ) ;
 
 %% Loop over phase encodes and define sequence blocks
+tic ;
 for i=1:Ny
     % RF spoiling (vary RF phase pseudo-randomly)
     rand_phase = mod(117*(i^2 + i + 2), 360) * pi/180 ;
@@ -58,6 +60,7 @@ for i=1:Ny
     seq.addBlock(gx, adc) ;
     seq.addBlock(mr.makeDelay(delayTR), gxSpoil, gyReph(i), gzSpoil) ;
 end
+toc ;
 
 %% check whether the timing of the sequence is correct
 [ok, error_report]=seq.checkTiming;
@@ -87,5 +90,6 @@ seq.plot('timeRange', [0 5]*TR);
 figure; plot(ktraj(1,:),ktraj(2,:),'b'); % a 2D plot
 axis('equal'); % enforce aspect ratio for the correct trajectory display
 hold;plot(ktraj_adc(1,:),ktraj_adc(2,:),'r.'); % plot the sampling points
+
 
 

@@ -16,19 +16,19 @@ step. *Meld* software can be used for text comparison and can be downloaded from
 
 ## 2. Sequence Folder
 ### 2.1 Basic MR Spectroscopy
-* s01_FID: the simplest free induction decay (FID) sequence   
-* s02_SE: spin-echo (SE) sequence without gradients   
-* s03_SE_crushers: SE sequence with a pair of crushers to eliminate spurious signals arising from the notoriously imperfect 180 deg RF pulse   
+* s01_FID: the simplest free induction decay (FID) sequence;   
+* s02_SE: spin-echo (SE) sequence without gradients;   
+* s03_SE_crushers: SE sequence with a pair of crushers to eliminate spurious signals arising from the notoriously imperfect 180 deg RF pulse.   
 ### 2.2 Basic MR Imaging
-* s11_GRE2D: basic 2D gradient echo (GRE) sequence   
-* s12_GRE2D_optimizedSpoiler: 2D GRE with optimized spoiler timing   
-* s13_GRE2D_acceleratedComputation: 2D GRE with optimized spoiler timing and accelerated computation   
+* s11_GRE2D: basic 2D gradient echo (GRE) sequence;   
+* s12_GRE2D_optimizedSpoiler: 2D GRE with optimized spoiler timing;   
+* s13_GRE2D_acceleratedComputation: 2D GRE with optimized spoiler timing and accelerated computation.   
 
 ## 3. Data Folder
-work-in-progress   
+works-in-progress.   
 
 ## 4. Recon Folder
-work-in-progress   
+works-in-progress.   
 
 ## 5. A More Detailed Pulseq Tutorial
 This Pulseq tutorial only covers very basic sequence design concepts. For more detailed tutorials, please go to https://github.com/pulseq/tutorials.    

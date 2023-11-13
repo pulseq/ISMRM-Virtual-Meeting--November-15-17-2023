@@ -10,7 +10,7 @@ The mapVBVD software is required to read raw data in Siemens TWIX format. The so
 
 ## 2. sequence folder
 ### 2.1 Basic MR spectroscopy
-s01_FID: the most simplest free induction decay sequence   
+s01_FID: the simplest free induction decay sequence   
 s02_SE: spin-echo sequence without gradients   
 s03_SE_crushers: spin-echo sequence with a pair of crushers to eliminate spurious signals arising from imperfect 180-pulse   
 ### 2.2 Basic MR imaging
@@ -24,5 +24,5 @@ work in progress
 ## 4. recon folder
 work in progress   
 
-## A more Detailed Pulseq tutorial
+## 5. A more detailed Pulseq tutorial
 https://github.com/pulseq/tutorials    

@@ -19,10 +19,10 @@ s12_GRE2D_optimizedSpoiler: 2D GRE with optimized spoiler timing
 s13_GRE2D_acceleratedComputation: 2D GRE with optimized spoiler timing and accelerated computation   
 
 ## 3. data folder
-work in progress   
+work-in-progress   
 
 ## 4. recon folder
-work in progress   
+work-in-progress   
 
 ## 5. A more detailed Pulseq tutorial
-https://github.com/pulseq/tutorials    
+This Pulseq tutorial only covers very basic sequence design concepts. For more detailed tutorials, please go to https://github.com/pulseq/tutorials.    

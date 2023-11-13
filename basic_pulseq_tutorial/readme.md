@@ -12,7 +12,7 @@ The mapVBVD software is required to read raw data in Siemens TWIX format. The so
 ### 2.1 Basic MR spectroscopy
 s01_FID: the simplest free induction decay sequence   
 s02_SE: spin-echo sequence without gradients   
-s03_SE_crushers: spin-echo sequence with a pair of crushers to eliminate spurious signals arising from imperfect 180-pulse   
+s03_SE_crushers: spin-echo sequence with a pair of crushers to eliminate spurious signals arising from the notoriously imperfect 180 deg RF pulse   
 ### 2.2 Basic MR imaging
 s11_GRE2D: basic 2D gradient echo (GRE) sequence   
 s12_GRE2D_optimizedSpoiler: 2D GRE with optimized spoiler timing   

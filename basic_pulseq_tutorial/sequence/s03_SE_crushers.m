@@ -1,5 +1,5 @@
 %% Pulseq tutorial for ISMRM virtual meeting 15.11.2023. Qingping Chen
-% Build a spin echo sequence
+% Build a spin echo sequence with a pair of crushers
 clear ; close all; clc ;
 %% Define system properties
 system = mr.opts('MaxGrad',32,'GradUnit','mT/m',...

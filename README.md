@@ -33,7 +33,7 @@ The preliminary program of the Online Meeting:
 |14:30     |30      |Pulseq on Siemens                                       |Maxim Zaitsev                      |Shohei Fujita        |
 |15:00     |30      |Pulseq on GE                                            |Jon-Fredrik Nielsen                |Shohei Fujita        |
 |15:30     |5       |*Break*                                                 |                                   |                     |
-|15:35     |15      |Image reconstruction (focus on Gadgetron)               |Qingping Chen                      |Bilal Tasdelen       |
+|15:35     |30      |Image reconstruction (focus on Gadgetron)               |Qingping Chen                      |Bilal Tasdelen       |
 |16:05     |30      |Advanced sequence examples                              |Jon-Fredrik Nielsen                |Bilal Tasdelen       |
 |16:35     |25      |Interactive Q/A session                                 |Maxim Zaitsev                      |Bilal Tasdelen       |
 |**Day 3** |        |                                                        |                                   |                     |

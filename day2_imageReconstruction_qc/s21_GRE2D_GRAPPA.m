@@ -12,6 +12,7 @@ sys = mr.opts('MaxGrad', 22, 'GradUnit', 'mT/m', ...
 
 seq = mr.Sequence(sys) ;           % Create a new sequence object
 fov = 256e-3 ; Nx = 256 ; Ny = 256 ;     % Define FOV and resolution
+phaseResoluion = fov/Nx / (fov/Ny) ;
 alpha = 10 ;                       % flip angle
 sliceThickness = 3e-3 ;            % slice
 sliceGap = 1e-3 ;
@@ -65,12 +66,23 @@ assert(delayTR >= 0 ) ;
 % set ACS lines for GRAPPA simulation (fully sampled central k-space
 % region)
 accelFactorPE = 2 ;
-ACShw = 12 ; % GRAPPA ACS half width i.e. here 28 lines are ACS
-PEsamp_u = 1:accelFactorPE:Ny ; % undersampling by every alternate line. Phase encoding in Y direction
-PEsamp_ACS = Ny/2-ACShw+1 : Ny/2+ACShw ; % GRAPPA autocalibration lines
+ACSnum = 32 ;
+centerLineIdx = floor(Ny/2) + 1 ; % index of the center k-space line, starting from 1.
+count = 1 ;
+for i = 1:Ny
+    if ( mod(i-centerLineIdx, accelFactorPE)==0 )
+        PEsamp_u(count) = i ;
+        count = count + 1 ;
+    end
+end
+minPATRefLineIdx = centerLineIdx - ACSnum/2 ; % mininum PAT line starting from 1
+maxPATRefLineIdx = centerLineIdx + floor(ACSnum-1)/2 ; % maximum PAT line starting from 1
+PEsamp_ACS = minPATRefLineIdx : maxPATRefLineIdx ; % GRAPPA autocalibration lines
+% PEsamp_ACS = nY/2-ACShw+1 : nY/2+ACShw ; % GRAPPA autocalibration lines
 PEsamp = union(PEsamp_u, PEsamp_ACS) ; % actually sampled lines
 nPEsamp = length(PEsamp) ; % number of actually sampled
 PEsamp_INC = diff([PEsamp, PEsamp(end)]) ;
+
 
 %% label setting
 % Set PAT scan flag
@@ -144,6 +156,8 @@ seq.setDefinition('Name', 'gre_p2') ;
 seq.setDefinition('SlicePositions', 0) ;
 seq.setDefinition('SliceThickness', sliceThickness) ;
 seq.setDefinition('SliceGap', sliceGap) ;
+seq.setDefinition('kSpaceCenterLine', centerLineIdx-1) ;
+seq.setDefinition('PhaseResolution', phaseResoluion) ;
 seq.write('gre_p2.seq')       % Write to pulseq file
 
 %% evaluate label settings more specifically

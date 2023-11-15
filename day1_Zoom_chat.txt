@@ -1,0 +1,479 @@
+08:57:36 From Moritz Zaiß To Everyone:
+	https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023
+09:05:59 From Moritz Zaiß To Everyone:
+	https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023
+09:36:59 From Sethu Boopathy Jegathambal To Everyone:
+	Hello, would it be possible to get the slides?
+09:37:15 From Moritz Zaiß To Everyone:
+	https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions/2
+09:38:25 From Sethu Boopathy Jegathambal To Everyone:
+	Thank you!
+09:38:42 From Moritz Zaiß To Everyone:
+	Replying to "Hello, would it be p..."
+	
+	https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/tree/main/slides
+09:40:58 From Nivedita Naresh To Everyone:
+	in terms of the magnetization preparation modules, how are the differences between the various vendors handled especially for arbitrary pulse shapes? Also do the specifications about the scanners need to be included in the validation block before the sequences can be run since each vendor also has multiple scanner models with different hardware limits?
+09:44:58 From Marlon Perez To Everyone:
+	what is the gradRasterTime for Bruker?
+09:45:27 From Marlon Perez To Everyone:
+	Which are the dimensionals of the RF amplitude?
+09:47:53 From Hu Cheng To Everyone:
+	There are many parameters for the gradient that are interrelated, what is the best way in specifying a gradient?
+09:50:35 From Qingping Chen To Everyone:
+	Replying to "There are many param..."
+	
+	It depends on what you want to set for the Gradient. For example, if you set for the flatTopTime and flatArea, other Parameters will be set automatically.
+09:50:35 From Yixuan Liu To Everyone:
+	In the mr.makeTrapezoid(). How do you define sys?
+09:51:25 From Qiang Liu To Everyone:
+	Reacted to "It depends on what y..." with 👍
+09:53:35 From Qingping Chen To Everyone:
+	Replying to "In the mr.makeTrapez..."
+	
+	The sys has been set at the begining of the sequence script. You can set for slew rate, max Gradient, rfRingdownTime, etc. You can use mr.makeTrapeyoid(...'system', sys) to set for it. You can have a close look at it in the following presenatation.
+09:54:02 From Yixuan Liu To Everyone:
+	Reacted to "The sys has been set..." with 👍
+09:54:11 From Ravichandran Rajkumar To Everyone:
+	Reacted to "The sys has been set..." with 👍
+09:55:59 From Noriyuki Tawara To Everyone:
+	Sorry for the rudimentary question. How do I install and set Pulseq to use on my own PC?
+09:56:47 From Moritz Zaiß To Everyone:
+	Replying to "Sorry for the rudime..."
+	
+	Matlab or Python?
+09:56:51 From Hande Halilibrahimoglu To Everyone:
+	Very naive question: Are function names and usage in matlab and python the same?
+09:57:57 From Qingping Chen To Everyone:
+	Replying to "Sorry for the rudime..."
+	
+	Thanks for the Question. There is a Pulseq tutorial hereÖ: https://github.com/pulseq/tutorials. where you see the detailed instruction on how to install for matlab
+09:58:10 From Moritz Zaiß To Everyone:
+	Replying to "Very naive question:..."
+	
+	they are very similar, but not 100% the same.
+09:58:17 From Zoona Javed To Everyone:
+	I sort of missed how to chose the raster start point from the start or center. Do I define it in the code somewhere ?
+09:58:35 From Hande Halilibrahimoglu To Everyone:
+	Reacted to "they are very simila..." with 👍
+09:58:40 From Bilal Tasdelen To Everyone:
+	Replying to "Very naive question:..."
+	
+	PyPulseq contributor here. The function names are the same, but stylization of the names are different. For example, for Matlab, it is makeTrapezoid, for Python, make_trapezoid.
+09:58:55 From Noriyuki Tawara To Everyone:
+	Replying to "Sorry for the rudime..."
+	
+	Thanks for replaying my question.	I have an MATLAB license. But I also want to use Python as well.
+09:59:06 From Hande Halilibrahimoglu To Everyone:
+	Reacted to "PyPulseq contributor..." with 👍
+09:59:15 From Jason Skinner To Everyone:
+	Replying to "what is the gradRa..."
+	
+	12.5 ns I think
+09:59:31 From Noriyuki Tawara To Everyone:
+	Replying to "Sorry for the rudime..."
+	
+	Thanks for letting me know.
+09:59:34 From Jeffery Wong To Everyone:
+	Reacted to "PyPulseq contributor..." with 👍
+09:59:36 From qu To Everyone:
+	Reacted to "PyPulseq contributor…" with 👍
+09:59:45 From Marlon Perez To Everyone:
+	Reacted to "12.5 ns I think" with 👍
+10:00:38 From Noriyuki Tawara To Everyone:
+	Reacted to "PyPulseq contributor..." with 👍
+10:00:41 From Marlon Perez To Everyone:
+	Reacted to "PyPulseq contribut..." with 👍
+10:00:53 From Noriyuki Tawara To Everyone:
+	Reacted to "Thanks for the Quest..." with 👍
+10:01:13 From Nivedita Naresh To Everyone:
+	how are the differences between gradient axes definitions dealt with?
+10:01:42 From Jody Todd To Everyone:
+	Are the blocks played sequentially or simultaneously?
+10:02:12 From Patrick Schuenke To Everyone:
+	Replying to "Sorry for the rudime..."
+	
+	PyPulseq can be installed directly from PyPi using the simple command "pip install pypulseq". However, I highly recommend to use the latest PyPulseq version directly from the GitHub page. Either clone and install it, or simply use "pip install git+https://github.com/imr-framework/pypulseq"
+10:02:40 From Moritz Zaiß To Everyone:
+	Reacted to "PyPulseq can be inst..." with 👍
+10:02:52 From Noriyuki Tawara To Everyone:
+	Reacted to "PyPulseq can be inst..." with 👍
+10:03:36 From Jianing Tang To Everyone:
+	How do you set the apodization?
+10:03:50 From Marlon Perez To Everyone:
+	Reacted to "PyPulseq can be in..." with 👍
+10:03:55 From Chen Zhang To Everyone:
+	Reacted to "Thanks for the Quest..." with 👍
+10:04:23 From Patrick Schuenke To Everyone:
+	Replying to "Are the blocks playe..."
+	
+	Each sequence is a concatenation of non-overlapping blocks. So they are played out sequentially. But each block can have several events (e.g. RF + Grad, multiple Grads, Grad + ADC...)
+10:04:23 From Chen Zhang To Everyone:
+	Reacted to "PyPulseq can be inst..." with 👍
+10:05:08 From Qingping Chen To Everyone:
+	Replying to "I sort of missed how..."
+	
+	thanks for the Question. We can not "choose" the raster start Point from the start or Center. When we excuete the sequence in Scanners, the scanner always samples at the center of the raster cell.
+10:06:04 From Carlos Castillo Passi To Everyone:
+	Replying to "How do you set the a..."
+	
+	makeSincPulse has a 'apodization' parameter you can change.
+10:07:19 From Jody Todd To Everyone:
+	Reacted to "Each sequence is a c..." with 👍
+10:08:20 From Andreas Voskrebenzev (MHH) To Everyone:
+	Regarding System Definitions. I think the limits are defined independent of axis (x,y,z), but e.g. the gradient can have different strenghts in different directions. Any way to deal with this issue effectively while using the grads with max settings? Do I miss something?		Also is there a library for common systems?
+10:09:39 From Moritz Zaiß To Everyone:
+	we will have a Q&A at the end of the session to try to answer all your Questions. they are collected here:	https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions
+10:12:20 From Qingping Chen To Everyone:
+	Replying to "Can you use gradient..."
+	
+	yes. The scaling will multiply the Gradient shape with many points with a scaling factor.
+10:13:53 From Qingping Chen To Everyone:
+	Replying to "Can you use gradient..."
+	
+	and the starting and ending points will also change along side with the area.
+10:14:16 From Johannes Mayer To Everyone:
+	Reacted to "PyPulseq can be in..." with 👍
+10:14:23 From Mehmet Emin Öztürk To Everyone:
+	Replying to "Can you use gradient..."
+	
+	Thanks
+10:17:21 From Qingping Chen To Everyone:
+	Replying to "Regarding System Def..."
+	
+	Thanks for the Question. when we create a Gradient, we can set the Amplitude for it.
+10:19:43 From Moritz Zaiß To Everyone:
+	Questions for this talk are collected here:		https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions/4
+10:20:50 From Maxim Terekhov To Everyone:
+	Nice talks ! I have question : Is there a way in Pulseq  to work with Triggered events (physiological signals such as ECG and external triggers) ? The same question is regarding   generating output triggers ( e.g for fMRI)
+10:22:57 From Maxim Zaitsev To Everyone:
+	Pulseq supports trigger input objects, it is possible to use cardio or breathing (or any other phisio signal) for triggering
+10:25:28 From Laurent Lamalle To Everyone:
+	How do you scale your RF Tx power to achieve a prescribed flip angle, from a previous reference calibration?
+10:26:37 From Maxim Terekhov To Everyone:
+	Maxim thank you, one more question, do one need to recompile Pulseq with some optins to make possible access to the nuclei tab in Special parameter card, to use pulseq for X-nuclei ?
+10:27:49 From Barry To Everyone:
+	Hi, when experimenting in a real scanner, we often need to rotate for shift the position based on a location sequence, how the rotation and shift thing get supported in Pulseq?
+10:30:08 From Moritz Zaiß To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	Educational answer: you can of Course Code this, by rotating the Gradient Events or changing the slice selection pulse frequency etc. 	Maxim will hae a more practical answer that depends on the Interpreter.
+10:34:39 From Marlon Perez To Everyone:
+	Reacted to "How do you scale y..." with 👀
+10:36:42 From Barry To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	Thanks for the answer, Professor!
+10:38:14 From Sultan Zaman Mahmud To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	The parameters like FOV, slice thickness can not be changed during the actual scan, is that correct? Or they can be changed on the scanner?
+10:39:52 From Moritz Zaiß To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	this depends on the Interpreter: The Siemens Interpreter allows a live Adjustment at the scanner of the FOV position.
+10:40:25 From Moritz Zaiß To Everyone:
+	Reacted to "How do you scale you..." with 👀
+10:40:26 From Moritz Zaiß To Everyone:
+	Removed a 👀 reaction from "How do you scale you..."
+10:40:34 From Jianing Tang To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	How about flip angle?
+10:40:50 From Barry To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	Wow, cool!
+10:44:56 From Moritz Zaiß To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	@Jianing Tang you can Always Change the reference voltage of Course. but the independet flip angles will be fixed
+10:45:08 From Juergen Hennig To Everyone:
+	Reacted to "How do you scale you..." with 👀
+10:46:26 From Sethu Boopathy Jegathambal To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	I might have missed it. Is there a way to explicitly synchronize two events? For instance, start of the gradient and RF.
+10:46:30 From Moritz Zaiß To Everyone:
+	Full program here:	https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023
+10:47:05 From Moritz Zaiß To Everyone:
+	Discussion and Questions for teh Q&A part in 1h can be posted here:		https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions
+10:59:06 From Laurent Lamalle To Everyone:
+	On slide 8/13, do I see correctly that the red dots sample the ky=0 horizontal axis while the kx=0 vertical axis is not sampled?
+11:04:39 From Sultan Zaman Mahmud To Everyone:
+	Would off-center imaging using non-Cartesian (i.e. spiral) trajectory work? Does it take care of the 'frequenctproportinaltogradient' we have to use for Siemens programming?
+11:06:20 From Qingping Chen To Everyone:
+	Replying to "Hi, when experimenti..."
+	
+	@Sultan Zaman Mahmud The Parameters like FOV; slice thickness, flip angle, TE, TR, etc. can not be adjusted in the scanner. You Need to modify in the sequence source Code and reproduce a .seq file.
+11:09:36 From Magdoom Kulam To Everyone:
+	Is there SAR simulation for RF?
+11:10:24 From Jianing Tang To Everyone:
+	Reacted to "Is there SAR simulat..." with 👍
+11:10:37 From Tiago Fernandes To Everyone:
+	Reacted to "Is there SAR simulat..." with 👍
+11:11:06 From Anais Artiges To Everyone:
+	Reacted to "Is there SAR simulat..." with 👍
+11:14:36 From Maxim Zaitsev To Everyone:
+	re event synchronization: of course, absolutely! All events within each block are syncronized by defining individual delays with respect to the beginning of that block
+11:15:07 From Raul Velasquez To Everyone:
+	Se ha reaccionado a "Would off-center i..." con 👍
+11:17:23 From 李宏玮 To Everyone:
+	Reacted to "Is there SAR simulat..." with 👍
+11:17:53 From Jody Todd To Everyone:
+	Reacted to "Is there SAR simulat..." with 👍
+11:20:28 From Marlon Perez To Everyone:
+	can you paste that link here please!
+11:21:35 From Mohamed Tachrount To Everyone:
+	Could you zoom in please?
+11:21:49 From Anais Artiges To Everyone:
+	Reacted to "Could you zoom in pl..." with 👍
+11:22:35 From Jerry Zheng To Everyone:
+	Reacted to "Could you zoom in pl..." with 👍
+11:22:49 From Carlos Castillo Passi To Everyone:
+	Hope that is better :)
+11:22:57 From Anais Artiges To Everyone:
+	Reacted to "Hope that is better ..." with 👍
+11:23:03 From Maxim Zaitsev To Everyone:
+	add 👍
+11:23:06 From Maxim Zaitsev To Everyone:
+	remove 👍
+11:23:12 From Mohamed Tachrount To Everyone:
+	Reacted to "Hope that is better ..." with 👍
+11:28:58 From Keerthi Sravan Ravi To Everyone:
+	PyPulseq notebook -- tinyurl.com/ISMRM-Virtual-2023
+11:29:37 From Xiaole Zhong To Everyone:
+	I am unable to use pypulseq with numpy 1.26.0, would it be updated later?
+11:30:07 From Berkin Bilgic To Everyone:
+	The link above seems to require  access permission
+11:30:17 From Jerry Zheng To Everyone:
+	Replying to "PyPulseq notebook --..."
+	
+	Hi, thanks for the link, however the access seems to be restricted…
+11:30:20 From Marta Maggioni To Everyone:
+	Reacted to "The link above seems..." with 👍
+11:31:15 From Keerthi Sravan Ravi To Everyone:
+	GitHub -- https://github.com/imr-framework/pypulseq/
+11:31:29 From Magdoom Kulam To Everyone:
+	Reacted to "The link above seems..." with 👍
+11:31:30 From Keerthi Sravan Ravi To Everyone:
+	Replying to "The link above seems..."
+	
+	Fixed!
+11:32:20 From Hande Halilibrahimoglu To Everyone:
+	For both python and matlab pulseq, can we modify the gui? Some advance sequences require optimization at scanner and it's super easy to do that with special parameters on sequence gui.
+11:32:22 From Jerry Zheng To Everyone:
+	Replying to "The link above seems..."
+	
+	I still don’t have access. I’ve requested access.
+11:32:43 From NURI CHUNG To Everyone:
+	Replying to "The link above seems..."
+	
+	I think we still need to require access as well
+11:32:48 From Jerry Zheng To Everyone:
+	Is it possible to use pulses on Bruker scanners? If so how?
+11:32:57 From Keerthi Sravan Ravi To Everyone:
+	Replying to "The link above seems..."
+	
+	Please make a copy of the notebook into your acc. You should be able to view the notebook.
+11:33:00 From Bilal Tasdelen To Everyone:
+	Replying to "I am unable to use p..."
+	
+	The numpy 1.26.0 issue was due to SigPy not working with that version of Numpy. It should e solved in the latest commits at PyPulseq GitHub.
+11:33:05 From Jerry Zheng To Everyone:
+	Replying to "Is it possible to us..."
+	
+	pulseq*
+11:33:22 From Marlon Perez To Everyone:
+	Reacted to "Is it possible to ..." with 👀
+11:34:05 From Keerthi Sravan Ravi To Everyone:
+	Replying to "For both python and ..."
+	
+	Modify the scanner GUI depends on the interpreter. If you are on Siemens, please contact Maxim.
+11:34:06 From Magdoom Kulam To Everyone:
+	Replying to "The link above seems..."
+	
+	Where is the notebook?
+11:34:39 From Keerthi Sravan Ravi To Everyone:
+	Replying to "The link above seems..."
+	
+	Notebook should be viewable at -- https://tinyurl.com/ISMRM-Virtual-2023	Please make a copy into your Google account
+11:35:23 From Moritz Zaiß To Everyone:
+	Replying to "The link above seems..."
+	
+	you have to provide free Access to every one with a link
+11:35:39 From Magdoom Kulam To Everyone:
+	Replying to "The link above seems..."
+	
+	When I click the link, it says access denied
+11:36:07 From Hande Halilibrahimoglu To Everyone:
+	Replying to "For both python and ..."
+	
+	@Maxim Zaitsev do you have any experience with this? My sequence will require some additions to sequence special card.
+11:36:13 From Keerthi Sravan Ravi To Everyone:
+	Replying to "The link above seems..."
+	
+	Please try now
+11:36:29 From Ziyu Li To Everyone:
+	Reacted to "The link above seems..." with 👍
+11:37:05 From Keerthi Sravan Ravi To Everyone:
+	Replying to "The link above seems..."
+	
+	Let me know if it worked?
+11:37:14 From Carlos Castillo Passi To Everyone:
+	Replying to "The link above seems..."
+	
+	Now it is working for me!
+11:37:19 From Xingwang Yong To Everyone:
+	Replying to "The link above seems..."
+	
+	It works
+11:37:56 From Keerthi Sravan Ravi To Everyone:
+	Replying to "The link above seems..."
+	
+	Thank you for your patience.
+11:38:10 From Chu-Yu Lee To Everyone:
+	Is there a way to import external RF files in Pulseq?
+11:38:11 From Keerthi Sravan Ravi To Everyone:
+	The PyPulseq notebook should be accessible publicly now -- https://tinyurl.com/ISMRM-Virtual-2023
+11:38:55 From Jens Rosenberg To Everyone:
+	So the  the puseq interpreter is needed for all scanners models (Prisma for example)  to be able to compile the pulseseq (sorry i missed the beginning of the meeting)
+11:39:21 From Keerthi Sravan Ravi To Everyone:
+	Replying to "So the  the puseq in..."
+	
+	Yes, interpreter is required to execute the .seq files that you generate on your computer.
+11:39:42 From Jens Rosenberg To Everyone:
+	Replying to "So the  the puseq in..."
+	
+	Thanks
+11:40:08 From Keerthi Sravan Ravi To Everyone:
+	Replying to "PyPulseq notebook --..."
+	
+	Fixed!
+11:40:27 From Jerry Zheng To Everyone:
+	Reacted to "Fixed!" with 👍
+11:40:36 From Keerthi Sravan Ravi To Everyone:
+	Replying to "Is there SAR simulat..."
+	
+	PyPulseq supports SAR
+11:42:06 From Keerthi Sravan Ravi To Jon-Fredrik Nielsen(Privately):
+	Thank you Jon, for having me on this virtual meeting. I need to drop off now. Please let me know where the GitHub discussions are via email, and I will check back later.
+11:42:40 From Diego Pedraza To Everyone:
+	Reacted to "Fixed!" with 👍
+11:42:41 From Diego Pedraza To Everyone:
+	remove 👍
+11:42:59 From Laurent Lamalle To Everyone:
+	The Matlab version seems to need the finint() function, apparently associated with the Curve Fitting toolbox. Is there a centralised full list of Matlab toolboxes required?
+11:43:23 From Jon-Fredrik Nielsen To (Privately):
+	Replying to "Thank you Jon, for h..."
+	
+	https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions  Thanks for the fantastic demo! The SAR tools etc are a great contribution too (in addition to pp itself)
+11:43:41 From Marlon Perez To Everyone:
+	Reacted to "The Matlab version..." with 👀
+11:45:12 From Marta Maggioni To Everyone:
+	Reacted to "The Matlab version s..." with 👀
+11:45:22 From Sultan Zaman Mahmud To Everyone:
+	Would off-center imaging using non-Cartesian (i.e. spiral) trajectory work? Does it take care of the 'frequencyproportinaltogradient' we have to use for Siemens programming?
+11:45:39 From Moritz Zaiß To Everyone:
+	Replying to "Would off-center ima..."
+	
+	what is frequencyproportinaltogradient?
+11:46:32 From Sultan Zaman Mahmud To Everyone:
+	Replying to "Would off-center ima..."
+	
+	this functions we have to use to set frequency phase objects for arbitrary gradients for readout
+11:47:20 From Xingwang Yong To Everyone:
+	Replying to "Would off-center ima..."
+	
+	I think the tutorial has non-cartesian example that you may be interested 		https://github.com/pulseq/tutorials/blob/e0f857898fcdcdda7c94a56e4a400370a5c53e7f/12_Radial_and_nonCartesian/seq/s06_Spiral.m#L124
+11:47:36 From Sultan Zaman Mahmud To Everyone:
+	Replying to "Would off-center ima..."
+	
+	thanks.
+11:48:42 From Laurent Lamalle To Everyone:
+	Reacted to "The Matlab version s..." with 👀
+11:49:35 From Moritz Zaiß To Everyone:
+	Replying to "Would off-center ima..."
+	
+	if you can express the final spiral as gx and gy , you can also express it by pulseq.
+11:50:06 From Istvan Homolya To Everyone:
+	thanks for the great talks! for Siemens pulseq Interpreter compilation, we may have issues with libBalance package. based on your experience, how crucial is it to be included in the compilation? are there other packages that Need to be included for some advanced application but not provided for the bare interpreter Code?
+11:52:18 From Mariama Salifu To Everyone:
+	is it possible to change the shim settings in  pulseq?
+11:52:25 From Sultan Zaman Mahmud To Everyone:
+	Replying to "Would off-center ima..."
+	
+	thanks
+11:54:36 From Marlon Perez To Everyone:
+	Moritz has a Bruker interpreter, right?
+	Can you share?
+11:55:07 From Chu-Yu Lee To Everyone:
+	would the GE interpreter work for any software versions of GE scanners, e.g. MR29 and MR30?
+11:56:10 From Moritz Zaiß To Everyone:
+	Replying to "Moritz has a Bruker ..."
+	
+	https://github.com/pulseq/bruker_interpreter
+11:56:34 From Laurent Lamalle To Everyone:
+	Any indication of developments for a Philips interpreter?
+11:57:02 From Laurent Lamalle To Everyone:
+	Good!
+11:57:58 From Moritz Zaiß To Everyone:
+	Replying to "Moritz has a Bruker ..."
+	
+	This is the hybrid Version with prep_module in Pulseq and Bruker readout: https://gitlab.com/SebMue/pulseq_cest_hybrid_bruker
+11:58:06 From Marlon Perez To Everyone:
+	Replying to "Moritz has a Bruke..."
+	
+	Thanks!
+11:59:22 From Jerry Zheng To Everyone:
+	Reacted to "This is the hybrid V..." with ❤️
+12:00:01 From Carlos Castillo Passi To Everyone:
+	Feel free to keep asking questions here! https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions
+12:00:15 From Moritz Zaiß To Everyone:
+	Thanks a lot for this wonderful meeting!	Great to see that there were more than 220 People joining.	Have to leave now.	Looking forward to tomorrow!
+12:00:28 From Juan Hernandez-Tamames To Everyone:
+	Thanks! Awesome Session.
+12:00:32 From Nan-kuei Chen To Everyone:
+	Thank you!
+12:00:34 From Jens Rosenberg To Everyone:
+	thank you!!
+12:00:35 From Daniela Bolanos To Everyone:
+	thank you!
+12:00:35 From Chu-Yu Lee To Everyone:
+	Thank you!
+12:00:36 From Laurent Lamalle To Everyone:
+	Thank you!
+12:00:37 From Jay S To Everyone:
+	Thank you
+12:00:39 From LEONARDO CORDERO To Everyone:
+	Thanks
+12:00:40 From Xingwang Yong To Everyone:
+	Thank you!
+12:00:41 From Sang Hun Chung To Everyone:
+	Thank you!
+12:00:41 From Feng Jia To Everyone:
+	Thanks
+12:00:42 From Nivedita Naresh To Everyone:
+	Danke
+12:00:42 From Yuan To Everyone:
+	Thank you🙂
+12:00:43 From Daphna Link-Sourani To Everyone:
+	Thank you very much!
+12:00:45 From hassanhawsawi To Everyone:
+	Thank you
+12:00:46 From Diego Pedraza To Everyone:
+	Thanks!
+12:00:47 From Johannes Mayer To Everyone:
+	Thank u :)
+12:00:48 From Zhu To Everyone:
+	Thank you!
+12:00:48 From Lars Kasper To Everyone:
+	Bye, thank you, everyone!
+12:00:48 From Tian LI To Everyone:
+	Thanks~
+12:00:49 From Xiaoqing Wang To Everyone:
+	Thank you!
+12:00:53 From Jerry Zheng To Everyone:
+	Thank you!
+12:01:14 From Martin_ Loh To Everyone:
+	Thank you also very much for this nice talk!

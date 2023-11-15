@@ -1,0 +1,420 @@
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{Boadilla}
+
+\usepackage[framed]{seqcode}    % Also includes listings packae
+\usepackage{verbatim}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Title page details: 
+\title{Working with Pulseq objects}
+%\subtitle{ISMRM virtual meeting: Vendor-Agnostic Pulse Sequence Programming with Pulseq: From Basics to Advanced Topics}
+\author{Jon-Fredrik Nielsen}
+\date{November 15, 2023}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+\beamertemplatenavigationsymbolsempty
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+
+% Remove logo from the next slides
+\logo{}
+
+\lstset{basicstyle=\tiny}     % listing font size
+
+
+% preliminaries
+\begin{frame}[fragile]{Preliminaries}    % need 'fragile' to make lstlisting work
+
+\begin{itemize}
+
+\item Code for this PDF (Latex, MATLAB) available on course Github site
+
+\item Custom functions written for this talk end with '\_\_' suffix. Example:
+\vspace{-5mm}
+\begin{lstlisting}[language=MATLAB,frame=none]
+>> sincrf__;       % creates example Pulseq events ('rf' and 'gz')
+\end{lstlisting}
+
+\item Other functions belong to the Pulseq MATLAB toolbox, either as standalone functions
+or attached to a 'seq' object. Examples:
+\vspace{-5mm}
+\begin{lstlisting}[language=MATLAB,frame=none]
+>> [rf, gz] = mr.makeSincPulse(pi/2, 'Duration', 2e-3, 'SliceThickness', 5e-3, ...
+              'apodization', 0.42, 'timeBwProduct', 4, 'system', sys);
+>> seq.plot('timeRange', [0 0.1]);
+\end{lstlisting}
+
+\end{itemize}
+
+\end{frame}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+%\begin{frame}{TODO}
+
+%* conversions between trapezoids, extended trapezoids and arbitrary gradients,
+%issues with the corners of the trapezoid (probably too advanced/in-depth topic
+%for the first day).
+
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Units}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Units}
+
+\begin{itemize}
+    \item RF
+        \begin{itemize}
+        \item Unit: Hz
+        \item divide by sys.gamma to convert to Tesla
+        \end{itemize}
+    \item Gradients
+        \begin{itemize}
+        \item Unit: Hz/m
+        \item divide by sys.gamma to convert to Tesla/m
+        \end{itemize}
+    \item Time in seconds
+    \item Flip angles in radians
+    \item RF/ADC phase in radians
+\end{itemize}
+
+%\begin{center}
+%\begin{tabular}{|l|c|c|}
+% \hline
+%  & Siemens & GE \\ [0.5ex]
+% \hline
+% Time required to turn A/D converter ON & 10 us & 40 us \\
+% \hline
+%\end{tabular}
+%\end{center}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gradient events}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Gradient events}
+
+3 types:
+\begin{itemize}
+    \item Trapezoid
+    \item Extended trapezoid
+    \item Arbitrary gradient
+\end{itemize}
+
+\bigskip
+Pulseq toolbox defaults
+\begin{itemize}
+    \item gradRasterTime = 10e-6 s
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Trapezoid}
+
+Shape specified by rise/flat/fall times
+
+\lstinputlisting[language=MATLAB]{trap.m}
+
+\lstinputlisting[language={},frame=none]{trap.txt}
+
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2,-1.5)$) {\includegraphics[width=0.4\textwidth]{trap.png}};
+
+\end{frame}
+
+
+
+\begin{frame}{Extended trapezoid}
+
+Shape sampled on vertices
+
+\lstinputlisting[language=MATLAB]{exttrap.m}
+
+\lstinputlisting[language={},frame=none]{exttrap.txt}
+
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2.5,-2.0)$) {\includegraphics[width=0.4\textwidth]{exttrap.png}};
+
+\end{frame}
+
+
+
+\begin{frame}{Arbitrary gradient}
+
+Shape sampled on regular raster, on \textcolor{red}{center} of raster periods
+
+\lstinputlisting[language=MATLAB]{arbgrad.m}
+
+\lstinputlisting[language={},frame=none]{arbgrad.txt}
+
+\pause
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(3,-1.5)$) {\includegraphics[width=0.5\textwidth]{arbgrad.png}};
+
+\pause
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-3,-1.5)$) {\includegraphics[width=0.5\textwidth]{arbgrad_pulseq.png}};
+
+\end{frame}
+
+
+\begin{frame}{'first' and 'last'}
+
+\begin{itemize}
+    \item Waveform values at beginning of first raster period, and end of last raster period
+    \item Calculated by makeArbitraryGradient(), or set manually
+    \item Uses: seq.plot();  k-space calculation;
+          check for waveform continuity across blocks
+    \item not yet saved in .seq file (likely to change in the future)
+\end{itemize}
+
+\lstinputlisting[language={},frame=none]{firstlast.txt}
+
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(3.5,-2.1)$) {\includegraphics[width=0.5\textwidth]{firstlast.png}};
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Modify gradients with scaleGrad()}
+
+\begin{itemize}
+    \item Function returns a scaled copy of the input event
+    \item Typically used inside scan loop, e.g., 
+          to scale the y phase encode gradient:
+    \begin{lstlisting}[language=MATLAB,frame=none]
+    for j = -Ny/2:Ny/2-1
+        seq.addBlock(mr.scaleGrad(gy, j/(Ny/2)));
+        ...
+    end
+    \end{lstlisting}
+    \item Opinion: it is good programming practice use scaleGradient() instead of creating a new event from scratch
+    \begin{itemize}
+        \item Makes the purpose of the gradient event, and relationship to the input gradient, clear  
+        \item Scaled events share the same shape ID $\to$ simplifies interpreter code
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Modify gradients with rotate()}
+
+\begin{itemize}
+    \item Function returns single-axis gradient events resulting from rotation
+    \vspace{-0.5cm}
+    \lstinputlisting[language=MATLAB]{rotate.txt}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Gradient 'surgery' with splitGradientAt()}
+\lstinputlisting[language=MATLAB]{splitgradientat.txt}
+\end{frame}
+\begin{frame}[fragile]{addGradients()}
+Returns sum of gradients
+\lstinputlisting[language=MATLAB]{addgradients.txt}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{RF events}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{RF events}
+
+\begin{itemize}
+    \item Shape sampled on regular raster on center of raster periods, or on vertices
+    \item Pulseq toolbox defaults
+        \begin{itemize}
+            \item rfRasterTime = 1e-6 s
+        \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{RF event: Example 1}
+
+sinc pulse
+
+\vspace{-3mm}
+\lstinputlisting[language=MATLAB]{sincrf.m}
+\vspace{-0.6cm}
+\lstinputlisting[language={},frame=none]{sincrf.txt}
+
+\pause
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2.5,-1)$) {\includegraphics[width=0.7\textwidth]{sincrf.png}};
+
+\end{frame}
+
+
+\begin{frame}{RF dead time, ringdown time}
+
+\begin{itemize}
+    \item Some time is required to turn on RF amplifier
+    \begin{itemize}
+        \item Varies by vendor (of order $\sim$100~$\mu s$)
+    \end{itemize}
+    \item Some time is also required to turn off the RF amplifier
+    \begin{itemize}
+        \item Varies by vendor (of order tens of $\mu s$)
+    \end{itemize}
+    \item Pulseq toolbox:
+    \begin{itemize}
+        \item Requires that rf.delay $\geq$ sys.rfDeadTime.  
+              makeSincPulse() will insert this delay if needed.
+        \item Requires a gap $\geq$ sys.rfRingdownTime between end of RF waveform and end of block. 
+              makeSincPulse() will extend the block duration if needed.
+    \end{itemize}
+    \item Depending on the vendor, it may not always be necessary to specify non-zero dead/ringdown times 
+          (more on that later)
+\end{itemize}
+
+%\lstinputlisting[language={},frame=none]{sincrf.txt}
+
+\end{frame}
+
+
+\begin{frame}{RF event: Example 2}
+
+SMS pulse (6 simultaneous slices)
+
+\vspace{-3mm}
+\lstinputlisting[language=MATLAB]{arbrf.m}
+\vspace{-0.6cm}
+\lstinputlisting[language={},frame=none]{arbrf.txt}
+
+\pause
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2.5,-1)$) {\includegraphics[width=0.7\textwidth]{arbrf.png}};
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ADC events}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{ADC events}
+
+\begin{itemize}
+    \item Samples assumed to occur at centers of dwell time periods 
+    \item The delay defines the timing of the starting edge of the first period
+\end{itemize}
+
+\lstinputlisting[language=MATLAB]{makeadc.m}
+%\vspace{-0.6cm}
+\lstinputlisting[language={},frame=none]{adc.txt}
+
+\end{frame}
+
+
+
+\begin{frame}{ADC dead time}
+
+\begin{itemize}
+    \item Some time is required to turn on data acquisition board
+    \begin{itemize}
+        \item Varies by vendor (typically a few tens of $\mu s$)
+    \end{itemize}
+    \item Pulseq toolbox:
+    \begin{itemize}
+        \item Requires that adc.delay $\geq$ sys.adcDeadTime.  makeAdc() will insert this delay if needed.
+        \item Requires a gap $\geq$ sys.adcDeadTime between end of ADC window and end of block. makeAdc() will extend the block duration if needed.
+    \end{itemize}
+    \item Depending on the vendor, it may not always be necessary to specify a non-zero dead time before/after the ADC window 
+\end{itemize}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Delay events}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Delay events}
+
+\begin{itemize}
+    \item Not real objects: their only function is to (possibly) extend the block duration  
+    \item Not stored in the Pulseq file
+\end{itemize}
+
+\lstinputlisting[language=MATLAB]{makedelay.m}
+%\vspace{-0.6cm}
+\lstinputlisting[language={},frame=none]{delay.txt}
+
+\end{frame}
+
+
+\begin{frame}{Get event duration: mr.calcDuration()}
+
+\begin{itemize}
+    \item Example:
+\lstinputlisting[language=MATLAB]{calcduration.txt}
+    \item Common use: calculate delays for desired TE, TR, etc
+\end{itemize}
+
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Creating blocks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Creating blocks}
+
+\lstinputlisting[language=MATLAB]{makeblocks.m}
+
+\lstinputlisting[language={}, frame=none]{block1.txt}
+
+\pause
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2.5,-1.5)$) {\includegraphics[width=0.65\textwidth]{blocks.png}};
+
+\end{frame}
+
+
+\begin{frame}{Creating blocks}
+
+Rules:
+\begin{itemize}
+    \item Time is referenced to start of block
+    \item Block duration is determined by the longest event
+    \item Only one event on each channel (per block)
+\end{itemize}
+
+\medskip
+To pass seq.checkTiming(), additional rules apply:
+\begin{itemize}
+    \item Minimum RF delay = sys.rfDeadTime
+    \item Minimum RF ringdown time before end of block = sys.rfRingdownTime
+    \item Minimum ADC delay = sys.adcDeadTime
+    \item Minimum time after ADC event before end of block = sys.adcDeadTime
+    \item Many more constraints are verified/checked by checkTiming(),
+          which will be covered in the 'Sequence Analysis' talk.
+\end{itemize}
+
+\end{frame}
+
+
+
+\end{document}

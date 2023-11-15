@@ -1,0 +1,25 @@
+gy =
+         type: 'trap'
+      channel: 'y'
+    amplitude: 8.3333e+05
+     riseTime: 1.2000e-04
+     flatTime: 0
+     fallTime: 1.2000e-04
+         area: 100
+     flatArea: 0
+        delay: 0
+
+>> gy_sum = mr.addGradients({gy, gy}, 'system', sys) 
+
+gy_sum = 
+         type: 'trap'
+      channel: 'y'
+    amplitude: 1.6667e+06
+     riseTime: 1.2000e-04
+     flatTime: 0
+     fallTime: 1.2000e-04
+         area: 200
+     flatArea: 0
+        delay: 0
+
+

@@ -1,0 +1,3 @@
+[rf, gz] = mr.makeSincPulse(20/180*pi, 'Duration', 2e-3, 'SliceThickness', 5e-3, ...
+   'apodization', 0.42, 'timeBwProduct', 4, 'system', sys);
+    

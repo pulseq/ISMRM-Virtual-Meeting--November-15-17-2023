@@ -1,0 +1,12 @@
+# To compile talk (create talk.pdf)
+
+1. In MATLAB, run main.m to create .txt and .png files
+```
+>> main;
+```
+
+2. On Linux command line:
+```
+$ ./doit
+```
+

@@ -1,0 +1,27 @@
+gyBlip = 
+         type: 'trap'
+      channel: 'y'
+    amplitude: 5.5556e+05
+     riseTime: 9.0000e-05
+     flatTime: 0
+     fallTime: 9.0000e-05
+         area: 50
+
+>> gy_parts = mr.splitGradientAt(gyBlip, gyBlip.riseTime);
+gy_parts(1) =
+         type: 'grad'
+      channel: 'y'
+     waveform: [0 5.5556e+05]
+        delay: 0
+           tt: [0 9.0000e-05]
+    shape_dur: 9.0000e-05
+         area: 25
+
+gy_parts(2) =
+         type: 'grad'
+      channel: 'y'
+     waveform: [5.5556e+05 0]
+        delay: 9.0000e-05
+           tt: [0 9.0000e-05]
+    shape_dur: 9.0000e-05
+         area: 25

@@ -1,0 +1,30 @@
+# Pulseq sequence file, truncated for illustration purposes
+
+# NUM DUR RF  GX  GY  GZ  ADC  EXT
+[BLOCKS]
+  1 320   1   0   0   1  0  1
+  2 100   0   2   3   4  0  0
+
+# id amplitude mag_id phase_id time_shape_id delay freq phase
+[RF]
+1      22.3311 1 2 0 100 0 0
+2      22.3311 1 2 0 100 0 2.04204
+
+# id amplitude rise flat fall delay
+[TRAP]
+ 1       266667 100 3000 100   0
+ 2      -150709  60  880  60   0
+
+# id num dwell delay freq phase
+[ADC]
+1 32 10000 190 0 0
+2 32 10000 190 0 2.04204
+
+# Sequence Shapes
+[SHAPES]
+
+shape_id 1
+num_samples 3000
+5.33512061e-05
+0.000160161335
+0.000267116839

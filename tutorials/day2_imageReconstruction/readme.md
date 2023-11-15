@@ -6,4 +6,4 @@ definitions option (*seq.setDefinition*).
 
 The *s21_GRE2D_GRAPPA* is built by implementing GRAPPA acceleration to the 2D GRE sequence with optimized spoiler and accelerated 
 computation (*s13_GRE2D_acceleratedComputation* in day 1).
-s21_GRE2D_GRAPPA produces raw data reconstructable by Siemens ICE and online/offline Gadgetron.
+*s21_GRE2D_GRAPPA* produces raw data reconstructable by Siemens ICE and online/offline Gadgetron.

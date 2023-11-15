@@ -1,0 +1,257 @@
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{Boadilla}
+
+\usepackage[framed]{seqcode}    % Also includes listings packae
+%\usepackage{verbatim}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Title page details: 
+\title{Sequence analysis tools}
+%\subtitle{ISMRM virtual meeting: Vendor-Agnostic Pulse Sequence Programming with Pulseq: From Basics to Advanced Topics}
+\author{Jon-Fredrik Nielsen}
+\date{November 15, 2023}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+\beamertemplatenavigationsymbolsempty
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+\lstset{
+    basicstyle=\tiny
+}
+
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example sequence: 2D spoiled GRE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Example sequence: 2D RF-spoiled gradient echo}
+
+\begin{lstlisting}[language=MATLAB,frame=none]
+    >> write2DGRE__;       % creates 'seq' object
+    >> seq.plot('blockRange', [1 6], 'showBlocks', true);
+\end{lstlisting}
+
+\begin{center}
+    \includegraphics<1>[width=.7\linewidth]{2DGRE.png}
+    \includegraphics<2>[width=.7\linewidth]{2DGREzoom.png}
+\end{center}
+
+%\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,-1.5)$) {\includegraphics[width=0.7\textwidth]{2DGRE.png}};
+
+\end{frame}
+
+\begin{frame}{Code excerpt}
+
+\lstinputlisting[language=MATLAB]{write2DGRE__short.m}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{seq.checkTiming()}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{seq.checkTiming()}
+
+\begin{itemize}
+    \item Checks timing of all blocks and objects in the sequence 
+    \item Optionally returns the detailed error log as cell array of strings
+    \item Usage:
+    \lstinputlisting[language=MATLAB,frame=none]{checktiming__.m}
+\end{itemize}
+      
+\bigskip
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{seq.testReport()}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{seq.testReport()}
+
+\begin{itemize}
+    \item Optional slow step, useful for testing during development
+    \item Detects TE, TR, flip angle, gradient peak amp/slew, ...
+    \item Usage:
+        \begin{lstlisting}[language=MATLAB,frame=none]
+        >> rep = seq.testReport;
+        >> fprintf([rep{:}]);
+        \end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{seq.testReport()}
+\lstinputlisting[language={},frame=none]{testreport.txt}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{k-space analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{k-space analysis: seq.calculateKspacePP()}
+
+Usage:
+\vspace{-5mm}
+\lstinputlisting[language=MATLAB,frame=none]{kspace__.m}
+
+\begin{center}
+    \includegraphics<1>[width=.7\linewidth]{kspace_full.png}
+    \includegraphics<2>[width=.7\linewidth]{kspace.png}
+\end{center}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Waveform shape analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Waveform shape analysis}
+
+\begin{itemize}
+    \item Use seq.waveforms\_and\_times() to decompress waveforms
+    \item Example usage:
+        \vspace{-5mm}
+        \lstinputlisting[language=MATLAB,frame=none]{waveformsandtimes__.m}
+\end{itemize}
+
+% Decompress the entire gradient waveform
+            %   Returns gradient wave forms as a cell array with
+            %   gradient_axes (typically 3) dimension; each cell contains
+            %   time points and the correspndig gradient amplitude values.
+            %   Additional return values are time points of excitations,
+            %   refocusings and ADC sampling points.
+            %   If the optionl parameter 'appendRF' is set to true the RF
+            %   wave shapes are appended after the gradients
+            %   Optional output parameters: tfp_excitation contains time
+            %   moments, frequency and phase offsets of the excitation RF
+            %   pulses (similar for tfp_refocusing); t_adc contains times
+            %   of all ADC sample points; fp_adc contains frequency and
+            %   phase offsets of each ADC object (not sample).
+            %   TODO: return RF frequency offsets and RF waveforms and t_preparing (once its available)
+
+\begin{center}
+    \includegraphics<1>[width=.6\linewidth]{waveformsandtimes.png}
+    \includegraphics<2>[width=.6\linewidth]{waveformsandtimes_zoom.png}
+\end{center}
+
+
+%seq.waveforms\_and\_times(), for example to create own plotting code, see for
+%example writeEpiRS around line 188. Another interesting example would be to
+%take a derivative of the gradient shapes to plot slew rates. A good learning
+%is for instance to plot the vector norm of the gradient as a function of time
+%for EPI, or even better the vector norm of the slew rate, showing that it is
+%then easy to exceed the maximum slew rate limit by applying in-plane rotations
+%to the EPI readout
+
+\end{frame}
+
+\begin{frame}[fragile]{Waveform shape analysis: combined gradient (norm)}
+
+%\begin{lstlisting}[language=MATLAB,frame=none]
+%    >> writeEpiRS__;     % creates 'seq' object
+%\end{lstlisting}
+
+\begin{center}
+    \includegraphics<1>[width=.8\linewidth]{amp_norot.png}
+    \includegraphics<2>[width=.8\linewidth]{amp_norot_norm.png}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]{Waveform shape analysis: combined slew rate (norm)}
+
+\begin{center}
+    \includegraphics<1>[width=.8\linewidth]{slew_norot.png}
+    \includegraphics<2>[width=.8\linewidth]{slew_norot_norm.png}
+\end{center}
+
+\end{frame}
+
+
+%\begin{frame}[fragile]{Oblique scan}
+%TODO if time
+%\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Slice profile simulation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Simulate slice profile}
+
+\begin{itemize}
+    \item Slice profile impacts SNR, partial volume effects, slice cross-talk
+    \item Fortunately, easy to simulate. Example:
+\end{itemize}
+
+\lstinputlisting[language=MATLAB]{rfsim__.m}
+
+\pause
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,0)$) {\includegraphics[width=0.8\textwidth]{slice.png}};
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{PNS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{PNS modeling (GE)}
+
+\begin{itemize}
+    \item Nerve impulse response model
+    \footnote{Schulte RF, Noeske R. Peripheral nerve stimulation‐optimal gradient waveform design. Magnetic resonance in medicine. 2015 Aug;74(2):518-22}
+    \item Example:
+\lstinputlisting[language=MATLAB,frame=none]{pnsdemo__.m}
+\end{itemize}
+
+\pause
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,0)$) {\includegraphics[width=0.8\textwidth]{pns.png}};
+
+%\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,-1.5)$) {\includegraphics[width=0.7\textwidth]{2DGRE.png}};
+%\lstinputlisting[language=MATLAB]{write2DGRE__short.m}
+%\begin{lstlisting}[language=MATLAB,frame=none]
+%>> 47;
+%\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{SAR: a simple reference measurement approach}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]{SAR: a simple reference measurement approach}
+
+%TODO: experimental demonstration -- how accurate is it
+
+%\end{frame}
+
+
+\end{document}

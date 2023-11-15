@@ -1,7 +1,10 @@
 # Vendor-Agnostic Pulse Sequence Programming with Pulseq: From Basics to Advanced Topics 
 
-**A Three-Day [ISMRM Virtual Meeting](https://www.ismrm.org/virtual-meetings/) Series  
-November 15-17, 2023**
+**A Three-Day [ISMRM Virtual Meeting](https://www.ismrm.org/virtual-meetings/) Series - November 15-17, 2023**
+
+<img src="nih-logo-color-tagline.png" alt="NIH Logo" height="40"/><br>
+Supported by NIH U24-NS120056
+
 
 [Pulseq](https://pulseq.github.io/) is a vendor-independent MR pulse programming platform that allows one to create and analyze MRI sequences in interactive programming environments such as MATLAB or Python and to execute them on hardware using sequence-agnostic interpreters. Mature interpreters for the Pulseq specification now exist for Siemens and GE scanners, with possibly more to follow in the future.
 

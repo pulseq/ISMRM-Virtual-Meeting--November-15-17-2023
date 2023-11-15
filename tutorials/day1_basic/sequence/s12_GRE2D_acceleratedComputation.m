@@ -62,7 +62,7 @@ assert(delayTR >= 0 ) ;
 % preregister constant objects to accelerate computations
 % this is not necessary, but accelerates the sequence creation
 gxPre.id = seq.registerGradEvent(gxPre) ;
-gx1.id = seq.registerGradEvent(gx1) ;
+gx_add.id = seq.registerGradEvent(gx_add) ;
 gzSpoil.id = seq.registerGradEvent(gzSpoil) ;
 % the phase of the RF object will change, therefore we only per-register the shapes
 [~, rf.shapeIDs] = seq.registerRfEvent(rf) ; 

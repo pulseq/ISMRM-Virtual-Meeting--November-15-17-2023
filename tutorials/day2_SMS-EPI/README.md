@@ -5,6 +5,13 @@ To create the scan files and plot, in MATLAB do:
 >> main;
 ```
 
+## Requirements
+
+Script assumes
+1. Linux (tested on Ubuntu)
+2. git installed
+3. python installed
+
 ## Python troubleshooting
 
 writeEPI.m calls Python to create the CAIPI sampling pattern.

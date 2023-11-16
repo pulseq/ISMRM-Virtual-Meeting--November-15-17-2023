@@ -1,9 +1,12 @@
-# Create SMS-EPI Pulseq file, convert to GE format, and plot in MATLAB
+# Create SMS-EPI (or 3D EPI) fMRI Pulseq file, convert to GE format, and plot in MATLAB
 
 To create the scan files and plot, in MATLAB do:
 ```
 >> main;
 ```
+
+To create the corresponding 3D EPI file (3d-epi.seq), change 'SMS' to '3D' in the writeEPI call.
+
 
 ## Requirements
 

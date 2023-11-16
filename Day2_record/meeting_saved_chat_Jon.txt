@@ -1,0 +1,157 @@
+10:43:43 From Bilal Tasdelen To Everyone:
+	As a reminder, you can also post your questions on GitHub discussions: https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions  We tried to copied the questions and answers on chat to discussion. Feel free to check it out!
+10:52:45 From AV To Everyone:
+	Will this also work with T-PAT Grappa?
+10:53:38 From Maxim Zaitsev To Everyone:
+	we don't know, we've never tried ;-)
+10:53:47 From AV To Everyone:
+	Reacted to "we don't know, we've..." with 😂
+10:54:00 From Jon-Fredrik Nielsen To Maxim Zaitsev(Privately):
+	Could you save the chat log after the meeting -- my Zoom died and I now see only the last few messages
+10:54:06 From AV To Everyone:
+	Replying to "Will this also work ..."
+	
+	Ok, we will find out ;-)
+10:54:33 From Maxim Zaitsev To Jon-Fredrik Nielsen(Privately):
+	Jokes aside: probably it would require some additional work, but probably it is not too difficult
+10:54:50 From Maxim Zaitsev To Jon-Fredrik Nielsen(Privately):
+	yes, I'll try to think of it
+11:03:16 From Jody Todd To Everyone:
+	How about partial Fourier acquisitions?
+11:04:21 From Maxim Zaitsev / Qingping Chen To Everyone:
+	Replying to "How about partial Fo..."
+	
+	In principle, partial Fourier acq. is possible. But due to the limited time, we did not verify this yet.
+11:08:10 From Maxim Zaitsev To Everyone:
+	BTW, all presentations are readily available on gitHub -- here: https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/tree/main/slides
+11:10:43 From Magdoom Kulam To Everyone:
+	Are the python and MATLAB versions of pulseq identical?
+11:10:55 From Magdoom Kulam To Everyone:
+	In terms of functionality
+11:12:46 From Maxim Zaitsev To Everyone:
+	they are very close but not identical. Sravan is doing really great job in trying to align them. We mostly use the Matlab version here in Freiburg, but we also have 2-3 Python enthusiasts in the group, who use pypulseq
+11:13:52 From Bilal Tasdelen To Everyone:
+	Replying to "Are the python and M..."
+	
+	They are mostly identical in terms of the basic functionality, and designed to give the exact same .seq file.  At the moment some newer functions of the Matlab version has not been implemented on PyPulseq yet.
+11:17:09 From Shohei Fujita To Everyone:
+	As a reminder, feel free to post questions to: https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions/categories/questions-for-the-q-a-sessions
+	We will discuss the answers in the Q/A session.
+11:25:06 From Zhengguo Tan To Everyone:
+	Sorry to interrupt. Perhaps a stupid question:  If mb=6 and caipishiftZ=2, there would be 3 slices that you don't sample at all. Could this be the case?
+11:34:22 From Nivedita Naresh To Everyone:
+	is ghost correction implemented
+11:36:28 From Zhengguo Tan To Everyone:
+	Thank you!
+11:36:29 From Nivedita Naresh To Everyone:
+	what type of functional stimuli have you been able to resolve using the EPI technique for fMRI?
+11:37:48 From Jody Todd To Everyone:
+	Is there an SMS seq for Siemens as well?
+11:38:42 From Thomas Roos To Everyone:
+	The pTx on Philips, that will be presented tommorow is done at 7T!
+11:39:33 From Marlon Perez To Everyone:
+	Reacted to "Is there an SMS se..." with 👀
+11:39:35 From Jon-Fredrik Nielsen To Everyone:
+	Replying to "Is there an SMS seq ..."
+	
+	Yes, the demo I showed first produces the file sms-epi.seq.
+11:39:50 From Marlon Perez To Everyone:
+	Reacted to "Yes, the demo I sh..." with 👍
+11:39:55 From Jody Todd To Everyone:
+	Reacted to "Yes, the demo I show..." with 👍
+11:40:23 From Chu-Yu Lee To Everyone:
+	are there any differences in saving/reading archieve files using Pulseq on GE compared with EPIC?  for example, loadecho
+11:40:28 From Bolin Qin To Everyone:
+	Replying to "The pTx on Philips, ..."
+	
+	Hope for the pTx on Siemens 👍
+11:40:48 From Bolin Qin To Everyone:
+	Reacted to "Yes, the demo I show..." with 👍
+11:42:31 From Moritz Zaiß To Everyone:
+	ptx pypulseq prototype:		https://gitlab.cs.fau.de/mrzero/pypulseq_rfshim.git
+11:42:44 From Tian LI To Everyone:
+	Is the TOPPE platform you just demonstrated avaliable to all of us? Or can we only use it when we get the license from GE?
+11:42:53 From Jody Todd To Everyone:
+	Is there a way to simulate the slice excitation profiles?
+11:43:58 From Yuan To Everyone:
+	Reacted to "ptx pypulseq prototy..." with 👍
+11:44:31 From Tian LI To Everyone:
+	Thank you~
+11:45:27 From Nivedita Naresh To Everyone:
+	can the virtual scanner be used to see if the sequences are running
+11:46:48 From Marlon Perez To Everyone:
+	Reacted to "ptx pypulseq proto..." with 👍
+11:47:12 From Moritz Zaiß To Everyone:
+	Reacted to "ptx pypulseq prototy..." with 👍
+11:47:15 From Moritz Zaiß To Everyone:
+	Removed a 👍 reaction from "ptx pypulseq prototy..."
+11:51:23 From Nivedita Naresh To Everyone:
+	the virtual scanner was demoed yesterday at this workshop: https://pypi.org/project/virtual-scanner/
+11:51:25 From Moritz Zaiß To Everyone:
+	Replying to "The pTx on Philips, ..."
+	
+	this is done at 7T Siemens
+11:52:40 From Bolin Qin To Everyone:
+	Replying to "The pTx on Philips, ..."
+	
+	Thank you very much!
+11:52:44 From Bolin Qin To Everyone:
+	Reacted to "Pulseq_pTx_Freudensprung_Abstact_esmrmb_2023.pdf" with 👍
+11:52:48 From Bolin Qin To Everyone:
+	Reacted to "this is done at 7T S..." with 👍
+11:52:52 From Yuan To Everyone:
+	Reacted to "Pulseq_pTx_Freudensprung_Abstact_esmrmb_2023.pdf" with 👍
+11:53:06 From Moritz Zaiß To Everyone:
+	Replying to "The pTx on Philips, ..."
+	
+	requires a separate Version of pypulseq and Interpreter though.
+11:53:07 From Yuan To Everyone:
+	Thank you, learn so much🙂
+11:54:00 From Juan Antonio Hernandez-Tamames To Everyone:
+	Thank you. Nice and useful lectures! See you tomorrow.
+11:54:36 From Thomas Roos To Everyone:
+	Replying to "The pTx on Philips, ..."
+	
+	Very cool! Has anyone thusfar implemented 'full' pTx? (besides me, as I'll present tommorow)
+11:55:12 From Jon-Fredrik Nielsen To Everyone:
+	Reacted to "Yes, the demo I show..." with 👍
+11:55:18 From Jon-Fredrik Nielsen To Everyone:
+	remove 👍
+11:55:19 From Thomas Roos To Everyone:
+	Replying to "The pTx on Philips, ..."
+	
+	I did not manage to find that...
+11:55:52 From Abbas Moghaddam To Everyone:
+	Great lectures. Thank you
+12:08:07 From Jody Todd To Everyone:
+	Thanks!
+12:08:09 From Bolin Qin To Everyone:
+	Thank you for the great lectures!
+12:08:15 From Laurent Lamalle To Everyone:
+	Thank you!
+12:08:15 From Chu-Yu Lee To Everyone:
+	Thank you!
+12:08:16 From Tian LI To Everyone:
+	Thank you all!
+12:08:16 From Sherry Huang To Everyone:
+	Thank you!
+12:08:18 From Feng Jia To Everyone:
+	Thanks
+12:08:19 From Yuan To Everyone:
+	Thanks!
+12:08:21 From Antoine Lutti To Everyone:
+	Thank you!
+12:08:22 From Xingwang Yong To Everyone:
+	Thanks!
+12:08:24 From Felix Horger To Everyone:
+	Thank you! :)
+12:08:24 From Stefano Tambalo To Everyone:
+	Thank you!
+12:08:24 From Yawen Wang To Everyone:
+	Thanks!
+12:08:26 From Anais Artiges To Everyone:
+	Thank you :)
+12:08:37 From Hassan Hawsawi To Everyone:
+	Thank you
+12:09:34 From Charles Cunningham To Everyone:
+	Thanks this was awesome

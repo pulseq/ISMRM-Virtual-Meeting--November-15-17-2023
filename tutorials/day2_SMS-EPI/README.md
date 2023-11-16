@@ -26,7 +26,7 @@ the following can help (assuming Linux):
     ```
     sudo apt-get install matlab-support
     ```
-2. That may make the Python call from within MATLAB work, but now figures may not show in Matlab. 
+2. That may make the Python call from within MATLAB work, but now figures may not show in MATLAB. 
     To fix that, do:
     ```
     >> opengl('save','software');

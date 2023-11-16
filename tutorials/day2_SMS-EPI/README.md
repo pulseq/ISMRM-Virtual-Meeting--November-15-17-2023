@@ -10,7 +10,8 @@ To create the scan files and plot, in MATLAB do:
 Script assumes
 1. Linux (tested on Ubuntu)
 2. git installed
-3. python installed
+3. python3 installed (tested with Python 3.10.12)
+
 
 ## Python troubleshooting
 

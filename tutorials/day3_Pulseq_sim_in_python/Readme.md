@@ -21,7 +21,7 @@ Endres, J., Dang, H., Glang, F., Loktyushin, A., Weinmüller, S., & Zaiss, M. (2
 
 Loktyushin, A, Herz, K, Dang, N. MRzero - Automated discovery of MRI sequences using supervised learning. Magn Reson Med. 2021; 86: 709–724. https://doi.org/10.1002/mrm.28727 
 
-Dang, HN, Endres, J, Weinmüller, S, et al. MR-zero meets RARE MRI: Joint optimization of refocusing flip angles and neural networks to minimize T2-induced blurring in spin echo sequences. Magn Reson Med. 2023; 90(4): 1345-1362. doi: 10.1002/mrm.29710
+Dang, HN, Endres, J, Weinmüller, S, et al. MR-zero meets RARE MRI: Joint optimization of refocusing flip angles and neural networks to minimize T2-induced blurring in spin echo sequences. Magn Reson Med. 2023; 90(4): 1345-1362. https://doi.org/10.1002/mrm.29710
 
 
 

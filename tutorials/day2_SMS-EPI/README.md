@@ -7,6 +7,9 @@ To create the scan files and plot, in MATLAB do:
 
 To create the corresponding 3D EPI file (3d-epi.seq), change 'SMS' to '3D' in the writeEPI call.
 
+This is a real fMRI sequence -- not just a demo! If you'd like to try it out for fMRI, 
+I'd love to hear from you (Jon, jfnielse@umich.edu)
+
 
 ## Requirements
 

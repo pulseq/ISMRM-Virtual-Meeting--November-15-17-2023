@@ -1,0 +1,301 @@
+09:03:00 From Magdoom Kulam To Everyone:
+	Maybe I missed it, it would be helpful if a demo can be shown for how to use the Siemens interpreter from the generated seq file.
+09:06:47 From Jonathan Endres To Everyone:
+	You can find more information about the simulation and how to execute the shown examples yourself here: https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/tree/main/tutorials/day3_Pulseq_sim_in_python
+09:09:03 From Maxim Zaitsev To Everyone:
+	I am happy to show in a bit more detail how to simulate sequences in IDEA in the frame of the last slot today (Q&A in the end of the meeting)
+09:09:24 From Yuan To Everyone:
+	Reacted to "I am happy to show i..." with 😃
+09:17:00 From Yixuan Liu To Everyone:
+	Reacted to "I am happy to show i..." with 👍
+09:24:30 From Marlon Perez To Everyone:
+	i got an error:
+	RuntimeError: Unsupported version_minor: 4. Expected: 3
+09:25:34 From Jonathan Endres To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	That means that the pulseq Version used on the colab is older than the Version used to write the file
+09:25:56 From Marlon Perez To Everyone:
+	Reacted to "That means that th..." with 😕
+09:25:59 From Marlon Perez To Everyone:
+	Removed a 😕 from "That means that th..."
+09:26:10 From Marlon Perez To Everyone:
+	Reacted to "That means that th..." with ☹️
+09:26:23 From Jonathan Endres To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	We are working on updating the MR0 dependencies to make this easier, it's currently just the pulseq function used to plot the file that is making trouble
+09:27:51 From Moritz Zaiß To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	thanks Marlon, please write an issue for jonathan! 🙂  https://github.com/MRsources/MRzero-Core/issues
+09:30:14 From Magdoom Kulam To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	I am unable to install mrzerocore in anaconda. I get this error when I use pip,
+	
+	ERROR: Could not find a version that satisfies the requirement mrzerocore (from versions: none)
+	ERROR: No matching distribution found for mrzerocore
+09:30:46 From Jonathan Endres To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	What python Version are you using?
+09:31:12 From Magdoom Kulam To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	3.11.5
+09:31:51 From Jonathan Endres To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	Thank you, I will look into it
+09:31:54 From Moritz Zaiß To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	which OS?
+09:32:16 From Magdoom Kulam To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	macOS ventura
+09:32:32 From Jonathan Endres To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	Oh, unfortunately it only runs on Windows and Linux
+09:32:47 From Magdoom Kulam To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	Ok I see. thanks
+09:32:50 From Nivedita Naresh To Everyone:
+	Hi is it possible to plot the trajectory using Pulseq objects
+09:33:06 From Moritz Zaiß To Everyone:
+	Reacted to "macOS ventura" with 🍎
+09:33:09 From Marlon Perez To Everyone:
+	Reacted to "We are working on ..." with 👍
+09:33:13 From Marlon Perez To Everyone:
+	Reacted to "thanks Marlon, ple..." with 👍
+09:33:50 From Patrick Schuenke To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	But ofc you can still run everything in colab!
+09:34:17 From Magdoom Kulam To Everyone:
+	Reacted to "But ofc you can stil..." with 👍
+09:34:33 From Moritz Zaiß To Everyone:
+	Replying to "i got an error:
+	Runt..."
+	
+	yes or jupyter
+09:41:54 From Feng Jia To Everyone:
+	Could you tell me what is the version of pulseq used in Koma? Thank you.
+09:41:56 From Jerry Zheng To Everyone:
+	Is it possible to use pulseq in Julia? Or is the sequence just imported as a file?
+09:45:25 From NURI CHUNG To Everyone:
+	Yes we can see
+09:47:10 From Maxim Zaitsev To Everyone:
+	please, if you can, use GitHub discussions https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/discussions to ask questions
+10:20:02 From Sultan Zaman Mahmud To Everyone:
+	can you please share the link to this spiral code?
+10:20:34 From yao ding To Everyone:
+	if use ssTSE for dynamic T1 and T2 mapping, what could be the temporal resolution?
+10:22:05 From Moritz Zaiß To Everyone:
+	https://github.com/HennigJue/single-shot-spiral-TSE.git
+10:22:06 From Maxim Zaitsev To Everyone:
+	slides of almost all presentations are available at: https://github.com/pulseq/ISMRM-Virtual-Meeting--November-15-17-2023/tree/main/slides
+10:23:14 From Maxim Zaitsev To Everyone:
+	Replying to "can you please share..."
+	
+	you can find the link in the presentations' PDF, please see the link below
+10:23:36 From Kyungmin Nam To Everyone:
+	Reacted to "you can find the lin..." with 👍
+10:24:22 From Moritz Zaiß To Everyone:
+	Replying to "can you please share..."
+	
+	https://github.com/HennigJue/single-shot-spiral-TSE
+10:24:32 From Sultan Zaman Mahmud To Everyone:
+	Replying to "can you please share..."
+	
+	thanks
+10:24:33 From Max To Everyone:
+	One question from yesterday~ As for the HarmonizedMRI/SMS-EPI and HarmonizedMRI/3DEPI displayed by Nielsen in SMS-EPI demo yesterday, we didn't find relevant resources on github. Is it possible for us to get the coressponding access?
+10:25:59 From Abbas Moghaddam To Everyone:
+	when recorded lectures become available?
+10:26:10 From Jon-Fredrik Nielsen To Everyone:
+	Replying to "One question from ye..."
+	
+	Ah, forgot to make those repos public before my presentation. Will do that now!
+10:26:55 From Maxim Zaitsev To Everyone:
+	Replying to "when recorded lectur..."
+	
+	we will do our best to make them available ASAP
+10:27:27 From Max To Everyone:
+	Replying to "One question from ye..."
+	
+	Thank you very much!
+10:28:58 From Abbas Moghaddam To Everyone:
+	Replying to "when recorded lectur..."
+	
+	Thank you
+10:29:24 From Jon-Fredrik Nielsen To Everyone:
+	Replying to "when recorded lectur..."
+	
+	Full recordings from days 1 and 2 are already up at https://www.ismrm.org/virtual-meetings/archive/
+10:42:31 From Nivedita Naresh To Everyone:
+	is the variability higher for T2 due to lower signal at later timeframes?
+10:42:45 From Max To Everyone:
+	Is Dot Cockpit - Poet recticted to the Siemens vendor?
+10:43:02 From Moritz Zaiß To Everyone:
+	there were some "constant-B1rms " approach by shaihan mailk.	Can or was this be implemented here?
+10:43:27 From Nikola Stikov To Everyone:
+	Do you have any results from version XA30 on Siemens?
+10:44:41 From Agah Karakuzu To Everyone:
+	Reacted to "Do you have any resu..." with 👍
+10:56:45 From Shohei Fujita To Everyone:
+	Replying to "Is Dot Cockpit - Poe..."
+	
+	Yes, these are for Siemens.
+10:57:52 From Jens Rosenberg To Everyone:
+	Have you tried the bSTAR at higher fields, such as 3T?
+11:00:01 From Chu-Yu Lee To Everyone:
+	Thank you Shohei for the great presentation! what are the possible causes for the lower reproducibility when using the vendor-naïve programming environment compared with Pulseq?
+11:05:33 From Abbas Moghaddam To Everyone:
+	Excellent talk Bilal. Well done!
+11:06:09 From Jens Rosenberg To Everyone:
+	Awesome, thank you!
+11:06:20 From Agah Karakuzu To Everyone:
+	Great talk Bilal, thanks!
+11:08:41 From Bilal Tasdelen To Everyone:
+	Reacted to "Great talk Bilal, th..." with ❤️
+11:08:49 From Bilal Tasdelen To Everyone:
+	Reacted to "Awesome, thank you!" with ❤️
+11:08:52 From Bilal Tasdelen To Everyone:
+	Reacted to "Excellent talk Bilal..." with ❤️
+11:09:36 From Bilal Tasdelen To Everyone:
+	Anyone who is interested in browsing our shared projects can use this link: github.com/usc-mrel
+11:09:48 From Jens Rosenberg To Everyone:
+	Reacted to "Anyone who is intere..." with 👍
+11:10:12 From Max To Everyone:
+	Reacted to "Anyone who is intere..." with 👍
+11:23:48 From Xiaoqing Wang To Everyone:
+	add 👍
+11:33:59 From yao ding To Everyone:
+	it seems the slide of Thomas Roos is not yet uploaded to the repo
+11:40:26 From Moritz Zaiß To Everyone:
+	How Vendor Independent is your pTx Approach?
+11:41:44 From Jens Rosenberg To Everyone:
+	Practically for the Philips interpreter, is this a patch from Philips to where the .seq is uploaded to or do i also need seq2ppe.m?
+11:44:03 From Jens Rosenberg To Everyone:
+	thank you
+11:45:56 From Jody Todd To Everyone:
+	If we have questions or need help troubleshooting with Pulseq in the future, what is the best way to ask questions?
+11:46:12 From Jerry Zheng To Everyone:
+	Reacted to "If we have questions..." with 👍
+11:46:22 From Max To Everyone:
+	Reacted to "If we have questions..." with 👍
+11:46:47 From Magdoom Kulam To Everyone:
+	Can we have a demo for how to use the Siemens interpreter from the generated seq file in more detail?
+11:48:03 From Seyedeh Nasim Adnani To Everyone:
+	Than you for the nice presentations. Is it possible to generate T2* maps online? Like adding a post-processing script to the reconstructions and generate the maps?
+11:48:45 From Seyedeh Nasim Adnani To Everyone:
+	Bilal and Shoei
+11:50:06 From Seyedeh Nasim Adnani To Everyone:
+	Thanks.
+11:50:14 From Jens Rosenberg To Everyone:
+	Going back to the Philips interpreters, do they work different software version?
+11:50:27 From Shohei To Everyone:
+	Reacted to "Thanks." with 👌
+11:51:50 From Jens Rosenberg To Everyone:
+	Thanks! I would be interested to use it for R5.9
+11:52:17 From Jens Rosenberg To Everyone:
+	Thank you!!
+11:52:41 From Amir Seginer To Everyone:
+	Can a .seq file be copied between vendors, or does it have to generated per vendor? (E.g, because of different raster times.)
+11:55:00 From Nivedita Naresh To Everyone:
+	in terms of standardization, what are your thoughts about standardizing sequences. Usually, from a user point of view, that is the main observation that there are too many techniques and its difficult completely understand the minute differences. However, the popularity of some of the other modalities is because of the minimalistic number of techniques available.
+11:55:01 From Amir Seginer To Everyone:
+	Thanks.
+11:57:05 From Nivedita Naresh To Everyone:
+	also have some of the pulseq techniques been approved to be used in patients
+11:57:07 From NURI CHUNG To Everyone:
+	yes
+11:57:19 From Kyungmin Nam To Everyone:
+	Reacted to "also have some of th..." with 👍
+11:58:09 From Thomas Roos To Everyone:
+	Replying to "also have some of th..."
+	
+	Cool! Is this published as well? I would love to know what - and how they did!
+12:00:10 From Magdoom Kulam To Everyone:
+	How to generate .dll and .so files to run on the scanner?
+12:01:43 From Jens Rosenberg To Everyone:
+	Does the .seq file need to be complied in IDEA to run on the scanner or can i just upload the .seq on the scanner interface?
+12:02:55 From Jens Rosenberg To Everyone:
+	..if i have the pulseq C2P
+12:02:58 From Laurent Lamalle To Everyone:
+	Thank you very much to all of you for this very interesting workshop!
+12:03:05 From Maxim Zaitsev / Qingping Chen To Everyone:
+	Replying to "How to generate .dll..."
+	
+	The C2P package contains the instruction to compile the Interpreter and generation of .dll and .so files.
+12:03:16 From Jim Holmes To Everyone:
+	Thank you so much to all of the organizers and speakers. This was very helpful to highlight this exciting work.
+12:03:17 From Yuan To Everyone:
+	Thank you all🙂
+12:03:19 From Seyedeh Nasim Adnani To Everyone:
+	Thank you.
+12:03:21 From Jerry Zheng To Everyone:
+	Thank you!
+12:03:25 From NURI CHUNG To Everyone:
+	Thank you so much!! It was really helpful !
+12:03:25 From Feng Jia To Everyone:
+	Thank you
+12:03:27 From Jody Todd To Everyone:
+	Thank you!
+12:03:32 From Sang Hun Chung To Everyone:
+	thank you, great workshop!
+12:03:37 From Jens Rosenberg To Everyone:
+	Thank you for this It has been very useful
+12:03:38 From Stefano Tambalo To Everyone:
+	Thank you! All the speakers are great and the organization was really spot on. Very enjoyable and useful
+12:03:47 From Magdoom Kulam To Everyone:
+	Thank you so much
+12:03:48 From yao ding To Everyone:
+	thank you all
+12:03:53 From Nivedita Naresh To Everyone:
+	It was a very informative workshop. Appreciate you all sharing the progress made
+12:03:56 From Kyungmin Nam To Everyone:
+	Reacted to "It was a very inform..." with 👍
+12:04:00 From Kyungmin Nam To Everyone:
+	Removed a 👍 reaction from "It was a very inform..."
+12:04:21 From Bolin Qin To Everyone:
+	Thank you all!
+12:04:22 From Tian LI To Everyone:
+	Appreciate you all!
+12:04:27 From Hsu-Lei Lee To Everyone:
+	Thank you all!
+12:04:29 From Xingwang Yong To Everyone:
+	Thank you all!
+12:04:29 From Xiaoqing Wang To Everyone:
+	Thank you!
+12:04:32 From Maxim Zaitsev / Qingping Chen To Everyone:
+	Replying to "Does the .seq file n..."
+	
+	No need to compile the .seq file in the IDEA.
+12:04:32 From Barry To Everyone:
+	Thank you all!!!
+12:04:35 From John Evans To Everyone:
+	Thank you all - this was a very enabling session, so I've already started trying things out. Wonderful new direction for pulse programming!
+12:04:45 From Jens Rosenberg To Everyone:
+	Reacted to "No need to compile t..." with 👍
+12:04:55 From Kyungmin Nam To Everyone:
+	Thanks all.
+12:04:56 From Mojtaba Shafiekhani To Everyone:
+	Thanks a lot (:

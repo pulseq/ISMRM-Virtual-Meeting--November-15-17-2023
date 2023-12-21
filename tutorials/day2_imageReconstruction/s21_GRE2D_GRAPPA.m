@@ -96,11 +96,11 @@ lblResetRefAndImaScan = mr.makeLabel('SET','IMA', false) ;
 % preregister constant objects to accelerate computations
 % this is not necessary, but accelerates the sequence creation
 gxPre.id = seq.registerGradEvent(gxPre) ;
-gx1.id = seq.registerGradEvent(gx1) ;
+gx_add.id = seq.registerGradEvent(gx_add) ;
 gzSpoil.id = seq.registerGradEvent(gzSpoil) ;
 % the phase of the RF object will change, therefore we only per-register the shapes
-% [~, rf.shapeIDs] = seq.registerRfEvent(rf) ; 
-rf.id = seq.registerRfEvent(rf) ; % NO GO EXAMPLE!!!
+[~, rf.shapeIDs] = seq.registerRfEvent(rf) ; 
+% rf.id = seq.registerRfEvent(rf) ; % NO GO EXAMPLE!!!
 for iY = 1:Ny
     gyPre(iY).id = seq.registerGradEvent(gyPre(iY)) ;
     gyReph(iY).id = seq.registerGradEvent(gyReph(iY)) ;
@@ -113,6 +113,12 @@ lblResetRefAndImaScan.id = seq.registerLabelEvent(lblResetRefAndImaScan) ;
 
 %% Loop over phase encodes and define sequence blocks
 tic ;
+% Add noise scans.
+seq.addBlock(mr.makeLabel('SET', 'LIN', 0)) ;
+seq.addBlock(adc, mr.makeLabel('SET', 'NOISE', true),lblResetRefScan,lblResetRefAndImaScan) ;
+seq.addBlock(mr.makeLabel('SET', 'NOISE', false)) ;
+
+
 for count=1:nPEsamp
     % set GRAPPA labels
     if ismember(PEsamp(count),PEsamp_ACS)
